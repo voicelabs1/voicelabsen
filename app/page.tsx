@@ -891,8 +891,7 @@ export default function Home() {
                 <p className="text-gray-600 mb-6">Start eenvoudig met AI-telefonie en verbeter direct je bereikbaarheid.</p>
                 <Link 
                   href="/consult" 
-                  className="block text-center bg-white border border-[#0063f2] text-[#0063f2] py-3 px-6 rounded-lg hover:bg-[#0063f2] hover:text-white transition-colors mb-8"
-                  aria-label="Vraag het Basis pakket aan"
+                  className="block text-center bg-[#0063f2] text-white py-3 px-6 rounded-lg hover:opacity-90 transition-colors mb-8 inline-flex items-center justify-center gap-2 w-full"
                 >
                   Direct aanvragen
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -954,102 +953,115 @@ export default function Home() {
 
             {/* Business Plan */}
             <div className="relative bg-[#004dbd] p-8 rounded-[20px] shadow-[0_2px_40px_rgba(0,0,0,0.06)] overflow-hidden reveal [animation-delay:200ms]" role="listitem">
-              <div itemScope itemType="https://schema.org/Product">
-                <meta itemProp="name" content="Business Plan" />
-                <meta itemProp="description" content="Automatiseer en schaal je klantenservice én sales met een krachtige AI-oplossing." />
-                <div itemProp="offers" itemScope itemType="https://schema.org/Offer">
-                  <meta itemProp="priceCurrency" content="EUR" />
-                  <meta itemProp="price" content={String(isYearly ? prices.business.yearly : prices.business.monthly)} />
-                  <meta itemProp="availability" content="https://schema.org/InStock" />
+              {/* Video Background */}
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover opacity-20"
+                style={{ zIndex: 0 }}
+              >
+                <source src="/comps/bg.mp4" type="video/mp4" />
+              </video>
+              <div className="relative z-10">
+                <div itemScope itemType="https://schema.org/Product">
+                  <meta itemProp="name" content="Business Plan" />
+                  <meta itemProp="description" content="Automatiseer en schaal je klantenservice én sales met een krachtige AI-oplossing." />
+                  <div itemProp="offers" itemScope itemType="https://schema.org/Offer">
+                    <meta itemProp="priceCurrency" content="EUR" />
+                    <meta itemProp="price" content={String(isYearly ? prices.business.yearly : prices.business.monthly)} />
+                    <meta itemProp="availability" content="https://schema.org/InStock" />
+                  </div>
+                  <div className="w-12 h-12 mb-6">
+                    <svg viewBox="0 0 32 32" className="w-full h-full text-white animate-spin-slow" fill="currentColor">
+                      <path d="m11.05,11.05c.65-.64,1.39-1.15,2.23-1.5L9.77,1.26c-1.91.81-3.62,1.96-5.08,3.43-1.47,1.47-2.62,3.18-3.43,5.08l8.29,3.51c.35-.83.86-1.58,1.5-2.23Z" />
+                      <path d="m11.05,20.95c-.64-.65-1.15-1.39-1.5-2.22-.36-.86-.55-1.78-.55-2.73H0c0,2.16.42,4.25,1.26,6.23.81,1.91,1.96,3.62,3.43,5.08,1.47,1.47,3.18,2.62,5.08,3.43,1.97.83,4.07,1.26,6.23,1.26v-9c-.95,0-1.86-.18-2.72-.55-.83-.35-1.58-.86-2.23-1.5Z" />
+                      <path d="m30.74,9.77c-.81-1.91-1.96-3.62-3.43-5.08-1.47-1.47-3.18-2.62-5.08-3.43C20.25.42,18.16,0,16,0v9c.95,0,1.86.18,2.72.55.83.83.35,1.58.86,2.23,1.5.64.65,1.15,1.39,1.5,2.22.36.86.55,1.78.55,2.72s-.18,1.86-.55,2.72c-.35.83-.86,1.58-1.5,2.23-.65.64-1.39,1.15-2.23,1.5l3.51,8.29c1.91-.81,3.62-1.96,5.08-3.43,1.47-1.47,2.62-3.18,3.43-5.09.83-1.98,1.26-4.07,1.26-6.23s-.42-4.25-1.26-6.23Z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-semibold mb-4 text-white">Business</h3>
+                  <div className="flex items-baseline gap-1 mb-6">
+                    <span className="text-4xl font-semibold text-white">€{isYearly ? prices.business.yearly : prices.business.monthly}</span>
+                    <span className="text-white/90">/maand</span>
+                  </div>
+                  <p className="text-white/90 mb-6">Automatiseer en schaal je klantenservice én sales met een krachtige AI-oplossing.</p>
+                  <Link
+                    href="/consult"
+                    className="bg-white text-[#0063f2] px-6 py-3 rounded-xl hover:bg-gray-100 transition-colors inline-flex items-center justify-center gap-2 w-full mb-8"
+                  >
+                    Start nu
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5">
+                        <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span className="text-white/90 flex-1 text-[15px] leading-snug">Kan 10 gesprekken tegelijk behandelen</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5">
+                        <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span className="text-white/90 flex-1 text-[15px] leading-snug">Inbound en outbound gesprekken</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5">
+                        <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span className="text-white/90 flex-1 text-[15px] leading-snug">2000 belminuten, onbeperkte oproepen</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5">
+                        <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span className="text-white/90 flex-1 text-[15px] leading-snug">Geavanceerde CRM-integratie – volledige automatisatie van klantgegevens</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5">
+                        <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span className="text-white/90 flex-1 text-[15px] leading-snug">Meerdere telefoonnummers koppelen – ideaal voor grote teams of vestigingen.</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5">
+                        <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span className="text-white/90 flex-1 text-[15px] leading-snug">Follow-up workflows: e-mail, Whatsapp, SMS</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5">
+                        <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span className="text-white/90 flex-1 text-[15px] leading-snug">Altijd inzicht met een realtime dashboard en uitgebreide rapporten</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5">
+                        <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <span className="text-white/90 flex-1 text-[15px] leading-snug">Geen technische kennis nodig – wij regelen en optimaliseren alles</span>
+                    </li>
+                  </ul>
                 </div>
-                <div className="w-12 h-12 mb-6">
-                  <svg viewBox="0 0 32 32" className="w-full h-full text-white animate-spin-slow" fill="currentColor">
-                    <path d="m11.05,11.05c.65-.64,1.39-1.15,2.23-1.5L9.77,1.26c-1.91.81-3.62,1.96-5.08,3.43-1.47,1.47-2.62,3.18-3.43,5.08l8.29,3.51c.35-.83.86-1.58,1.5-2.23Z" />
-                    <path d="m11.05,20.95c-.64-.65-1.15-1.39-1.5-2.22-.36-.86-.55-1.78-.55-2.73H0c0,2.16.42,4.25,1.26,6.23.81,1.91,1.96,3.62,3.43,5.08,1.47,1.47,3.18,2.62,5.08,3.43,1.97.83,4.07,1.26,6.23,1.26v-9c-.95,0-1.86-.18-2.72-.55-.83-.35-1.58-.86-2.23-1.5Z" />
-                    <path d="m30.74,9.77c-.81-1.91-1.96-3.62-3.43-5.08-1.47-1.47-3.18-2.62-5.08-3.43C20.25.42,18.16,0,16,0v9c.95,0,1.86.18,2.72.55.83.83.35,1.58.86,2.23,1.5.64.65,1.15,1.39,1.5,2.22.36.86.55,1.78.55,2.72s-.18,1.86-.55,2.72c-.35.83-.86,1.58-1.5,2.23-.65.64-1.39,1.15-2.23,1.5l3.51,8.29c1.91-.81,3.62-1.96,5.08-3.43,1.47-1.47,2.62-3.18,3.43-5.09.83-1.98,1.26-4.07,1.26-6.23s-.42-4.25-1.26-6.23Z" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-semibold mb-4 text-white">Business</h3>
-                <div className="flex items-baseline gap-1 mb-6">
-                  <span className="text-4xl font-semibold text-white">€{isYearly ? prices.business.yearly : prices.business.monthly}</span>
-                  <span className="text-white/90">/maand</span>
-                </div>
-                <p className="text-white/90 mb-6">Automatiseer en schaal je klantenservice én sales met een krachtige AI-oplossing.</p>
-                <Link
-                  href="/consult"
-                  className="bg-[#0063f2] text-white px-6 py-3 rounded-xl hover:bg-blue-600 transition-colors inline-flex items-center justify-center gap-2 w-full"
-                >
-                  Direct aanvragen
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5">
-                      <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <span className="text-white/90 flex-1 text-[15px] leading-snug">Kan 10 gesprekken tegelijk behandelen</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5">
-                      <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <span className="text-white/90 flex-1 text-[15px] leading-snug">Inbound en outbound gesprekken</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5">
-                      <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <span className="text-white/90 flex-1 text-[15px] leading-snug">2000 belminuten, onbeperkte oproepen</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5">
-                      <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <span className="text-white/90 flex-1 text-[15px] leading-snug">Geavanceerde CRM-integratie – volledige automatisatie van klantgegevens</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5">
-                      <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <span className="text-white/90 flex-1 text-[15px] leading-snug">Meerdere telefoonnummers koppelen – ideaal voor grote teams of vestigingen.</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5">
-                      <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <span className="text-white/90 flex-1 text-[15px] leading-snug">Follow-up workflows: e-mail, Whatsapp, SMS</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5">
-                      <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <span className="text-white/90 flex-1 text-[15px] leading-snug">Altijd inzicht met een realtime dashboard en uitgebreide rapporten</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5">
-                      <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <span className="text-white/90 flex-1 text-[15px] leading-snug">Geen technische kennis nodig – wij regelen en optimaliseren alles</span>
-                  </li>
-                </ul>
               </div>
             </div>
 
@@ -1077,9 +1089,9 @@ export default function Home() {
                 <p className="text-gray-600 mb-6">Volledig op maat gemaakte automatiseringen voor je bedrijfsprocessen.</p>
                 <Link
                   href="/consult"
-                  className="bg-[#0063f2] text-white px-8 py-4 rounded-xl text-lg hover:bg-blue-600 transition-colors inline-flex items-center gap-2"
+                  className="block text-center bg-[#0063f2] text-white py-3 px-6 rounded-lg hover:opacity-90 transition-colors mb-8 inline-flex items-center justify-center gap-2 w-full"
                 >
-                  Direct aanvragen
+                  Wordt partner
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
