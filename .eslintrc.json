@@ -1,31 +1,11 @@
 {
-  "extends": [
-    "next",
-    "next/core-web-vitals"
-  ],
-  "plugins": [
-    "@typescript-eslint"
-  ],
+  "extends": "next/core-web-vitals",
   "rules": {
-    // Disable rules that are causing issues
-    "react/no-unescaped-entities": 0,
-    "@typescript-eslint/no-unused-vars": 0,
-    "@typescript-eslint/no-explicit-any": 0,
-    "prefer-const": 0,
-    "prefer-rest-params": 0,
-    "@next/next/no-html-link-for-pages": 0,
-    
-    // Add specific rules for quotes and apostrophes
-    "quotes": ["error", "single", { "avoidEscape": true }],
-    "jsx-quotes": ["error", "prefer-double"]
-  },
-  "ignorePatterns": [
-    "node_modules/",
-    ".next/",
-    "out/",
-    "public/"
-  ],
-  "parserOptions": {
-    "project": "./tsconfig.json"
+    "react/no-unescaped-entities": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "prefer-const": "off",
+    "prefer-rest-params": "off",
+    "@next/next/no-html-link-for-pages": "off"
   }
 } 
