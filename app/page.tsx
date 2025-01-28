@@ -1149,7 +1149,7 @@ export default function Home() {
         <div className="max-w-3xl mx-auto">
           <h2 className="text-center mb-4 reveal">Veelgestelde vragen</h2>
           <p className="paragraph text-gray-600 text-center mb-12 reveal">
-            Dit zijn de meest gestelde vragen over onze AI-telefonisten.
+            Dit zijn de meest gestelde vragen over onze AI-receptionisten.
             <br />
             Andere vragen? <Link href="/contact" className="text-[#0063f2] hover:opacity-80">Neem contact op met ons team!</Link>
           </p>
@@ -1244,7 +1244,7 @@ export default function Home() {
               <div className={`transition-all duration-200 ease-in-out ${openFaq === 3 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
                 <div className="px-6 pb-6 pt-2">
                   <p className="paragraph text-gray-600 ml-10">
-                    De onboarding is simpel en snel - binnen een dag ben je live. We helpen je met het instellen van je bedrijfsgegevens, stem en doorschakeling. Alles wordt stap voor stap uitgelegd, zodat je AI-assistent perfect aansluit bij je bedrijf.
+                    De onboarding is simpel en snel. We helpen je met het instellen van je bedrijfsgegevens, stem en doorschakeling. Alles wordt stap voor stap uitgelegd, zodat je AI-assistent perfect aansluit bij je bedrijf.
                   </p>
                 </div>
               </div>

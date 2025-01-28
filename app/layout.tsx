@@ -24,10 +24,10 @@ const dmMono = DM_Mono({
 export const metadata: Metadata = {
   title: {
     template: '%s | Voicelabs',
-    default: 'Voicelabs - AI Telefonist voor uw bedrijf',
+    default: 'Ondersteun je Bedrijf met AI-Telefonisten | 24/7 Klantenservice',
   },
-  description: 'Voicelabs biedt een AI-telefonist die uw telefoongesprekken beantwoordt, routeert en afhandelt. Ontdek hoe onze AI-receptionist uw klantenservice kan verbeteren.',
-  keywords: 'AI telefonist, AI receptionist, klantenservice automatisering, virtuele receptionist, telefonie automatisering',
+  description: 'Voicelabs biedt virtuele asssistenten die je telefoongesprekken beantwoordt, routeert en afhandelt. Ontdek hoe onze AI-receptionist je klantenservice kan verbeteren.',
+  keywords: 'AI telefonist, AI receptionist, AI receptioniste, klantenservice automatisering, virtuele receptionist, telefonie automatisering',
   authors: [{ name: 'Voicelabs' }],
   publisher: 'Voicelabs',
   robots: {
@@ -46,11 +46,11 @@ export const metadata: Metadata = {
     locale: 'nl_NL',
     url: 'https://voicelabs.nl',
     siteName: 'Voicelabs',
-    title: 'Voicelabs - AI Telefonist voor uw bedrijf',
+    title: 'Ondersteun je Bedrijf met AI-Telefonisten | 24/7 Klantenservice',
     description: 'Voicelabs biedt een AI-telefonist die uw telefoongesprekken beantwoordt, routeert en afhandelt.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/plaatjes/optimalisatie.webp',
         width: 1200,
         height: 630,
         alt: 'Voicelabs - AI Telefonist',
@@ -59,9 +59,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Voicelabs - AI Telefonist voor uw bedrijf',
+    title: 'Ondersteun je Bedrijf met AI-Telefonisten | 24/7 Klantenservice',
     description: 'Voicelabs biedt een AI-telefonist die uw telefoongesprekken beantwoordt, routeert en afhandelt.',
-    images: ['/og-image.jpg'],
+    images: ['/plaatjes/optimalisatie.webp'],
   },
   alternates: {
     canonical: 'https://voicelabs.nl',
