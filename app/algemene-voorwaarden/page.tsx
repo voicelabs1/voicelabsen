@@ -103,7 +103,7 @@ export default function AlgemeneVoorwaarden() {
               <br /><br />
               E-mail: contact@voicelabs.nl
               <br /><br />
-              Laatste update: 24 juni 2024
+              Laatste update: 24 september 2024
             </p>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-async function addToAirtable(name: string, email: string, phone: string) {
+async function addToAirtable(naam: string, emailadres: string, telefoonnummer: string, vraag: string) {
   try {
     const response = await fetch(
       'https://api.airtable.com/v0/appSItr9MR2Jyktds/Leads',
@@ -12,9 +12,10 @@ async function addToAirtable(name: string, email: string, phone: string) {
         },
         body: JSON.stringify({
           fields: {
-            Naam: name,
-            Email: email,
-            Telefoonnummer: phone,
+            Naam: naam,
+            Email: emailadres,
+            Telefoonnummer: telefoonnummer,
+            Vraag: vraag
           },
           typecast: true
         }),
@@ -34,14 +35,14 @@ async function addToAirtable(name: string, email: string, phone: string) {
   }
 }
 
-async function createRetellCall(name: string, email: string, phone: string) {
+async function createRetellCall(naam: string, emailadres: string, telefoonnummer: string) {
   try {
     const requestBody = {
       from_number: '+3197010205229',
-      to_number: phone,
+      to_number: telefoonnummer,
       retell_llm_dynamic_variables: {
-        customerName: name,
-        customerEmail: email,
+        customerName: naam,
+        customerEmail: emailadres,
         huidige_datum: new Date().toISOString(),
       },
       override_agent_id: 'agent_8d40939af32079fc9f8f4be22b',
@@ -77,13 +78,13 @@ async function createRetellCall(name: string, email: string, phone: string) {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, phone } = body;
+    const { naam, emailadres, telefoonnummer, vraag } = body;
 
     // First save to Airtable
-    await addToAirtable(name, email, phone);
+    await addToAirtable(naam, emailadres, telefoonnummer, vraag);
 
     // Then create Retell call
-    await createRetellCall(name, email, phone);
+    await createRetellCall(naam, emailadres, telefoonnummer);
 
     return NextResponse.json({ success: true });
   } catch (error) {

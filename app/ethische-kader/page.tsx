@@ -84,7 +84,7 @@ export default function EthischeKader() {
               <br /><br />
               E-mail: contact@voicelabs.nl
               <br /><br />
-              Laatste update: 1 maart 2024
+              Laatste update: 24 september 2024
             </p>
           </div>
         </div>

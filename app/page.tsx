@@ -361,7 +361,7 @@ export default function Home() {
                         className="w-full bg-[#0063f2] text-white px-4 py-2 rounded-md text-sm font-medium hover:opacity-90 transition-opacity disabled:opacity-50"
                         aria-label="Start direct gesprek met AI-telefonist"
                       >
-                        {isSubmitting ? 'Even geduld...' : 'Direct bellen'}
+                        {isSubmitting ? 'Even geduld...' : 'Probeer het uit'}
                       </button>
                     )}
                   </form>
@@ -532,8 +532,8 @@ export default function Home() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="mb-2">Altijd bereikbaar, met slimmere inzet van personeel</h3>
-                      <p className="paragraph text-gray-600">Zorg automatisch voor 24/7 service, beantwoord vragen op elk moment en verhoog de klanttevredenheid.</p>
+                      <h3 className="mb-2">24/7 Bereikbaar, zonder extra personeel</h3>
+                      <p className="paragraph text-gray-600">Maak van elk moment een kans. Onze AI-receptioniste staat dag en nacht klaar, beantwoordt direct elke vraag en tilt klanttevredenheid naar een hoger niveau.</p>
                     </div>
                   </div>
 
@@ -545,8 +545,8 @@ export default function Home() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="mb-2">Minimaliseer dagelijkse stress en frictie</h3>
-                      <p className="paragraph text-gray-600">Ongestoord focussen: wij beheren de gesprekken, voorkomen frictie en verbeteren efficiëntie, zodat jouw bedrijf kan groeien.</p>
+                      <h3 className="mb-2">Minimaliseer dagelijkse ruis en frustratie</h3>
+                      <p className="paragraph text-gray-600">Wij vangen alle gesprekken op, elimineren onnodige onderbrekingen en stroomlijnen communicatie zodat jouw bedrijf ongehinderd kan groeien.</p>
                     </div>
                   </div>
 
@@ -558,8 +558,8 @@ export default function Home() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="mb-2">Mis nooit meer een belletje, boost je omzet</h3>
-                      <p className="paragraph text-gray-600">Elk gemist gesprek is een potentieel verlies van inkomsten. Beantwoord elk gesprek, grijp elke lead en krijg direct meer boekingen.</p>
+                      <h3 className="mb-2">Geen gemist gesprek = meer omzet</h3>
+                      <p className="paragraph text-gray-600">Elke gemiste oproep is een gemiste kans. Vang elk potentieel contact, converteer elke lead en zie je boekingen direct groeien. Geen kans blijft onbenut.</p>
                     </div>
                   </div>
 
@@ -571,7 +571,7 @@ export default function Home() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="mb-2">Vereenvoudig jouw bedrijfs-workflow</h3>
+                      <h3 className="mb-2">Naadloze integratie in de workflow van jouw bedrijf</h3>
                       <p className="paragraph text-gray-600">Voicelabs verbindt moeiteloos met je belangrijkste tools. Gebruik je een minder bekend systeem? Geen zorgen - wij ontwikkelen een naadloze integratie op maat voor jouw specifieke bedrijfssoftware.</p>
                     </div>
                   </div>

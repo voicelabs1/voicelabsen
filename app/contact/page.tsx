@@ -22,7 +22,7 @@ export default function ContactPage() {
     setSubmitStatus(null);
 
     try {
-      const response = await fetch('/api/submit-contact', {
+      const response = await fetch('/api/contact-form', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -35,6 +35,7 @@ export default function ContactPage() {
       setSubmitStatus('success');
       setFormData({ naam: '', emailadres: '', telefoonnummer: '', vraag: '' });
     } catch (error) {
+      console.error('Form submission error:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -99,7 +100,7 @@ export default function ContactPage() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="animate-[fadeSlideIn_1.2s_ease-out]">
                 <label htmlFor="naam" className="block text-sm font-medium text-gray-700 mb-2">
-                  Bedrijfsnaam
+                  Naam
                 </label>
                 <input
                   type="text"
@@ -117,7 +118,7 @@ export default function ContactPage() {
                 </label>
                 <input
                   type="email"
-                  id="emailadres"
+                  id="Email"
                   required
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#0063f2] focus:border-transparent transition-colors"
                   value={formData.emailadres}
