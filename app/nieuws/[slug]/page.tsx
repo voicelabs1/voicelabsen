@@ -126,12 +126,12 @@ export default async function BlogPost({ params }: PageProps) {
           <div className="max-w-7xl mx-auto">
             {/* Breadcrumbs with Schema.org markup */}
             <nav 
-              className="flex" 
+              className="flex flex-wrap text-sm" 
               aria-label="Breadcrumb"
               itemScope 
               itemType="https://schema.org/BreadcrumbList"
             >
-              <ol className="inline-flex items-center space-x-1 md:space-x-2">
+              <ol className="flex flex-wrap items-center">
                 <li 
                   className="inline-flex items-center"
                   itemProp="itemListElement" 
@@ -140,55 +140,53 @@ export default async function BlogPost({ params }: PageProps) {
                 >
                   <Link 
                     href="/" 
-                    className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600"
+                    className="text-gray-700 hover:text-blue-600"
                     itemProp="item"
                   >
                     <span itemProp="name">Home</span>
                   </Link>
                   <meta itemProp="position" content="1" />
+                  <svg className="w-3 h-3 text-gray-400 mx-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4"/>
+                  </svg>
                 </li>
                 <li
                   itemProp="itemListElement" 
                   itemScope
                   itemType="https://schema.org/ListItem"
+                  className="inline-flex items-center"
                 >
-                  <div className="flex items-center">
-                    <svg className="w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                      <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4"/>
-                    </svg>
-                    <Link 
-                      href="/nieuws" 
-                      className="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2"
-                      itemProp="item"
-                    >
-                      <span itemProp="name">Blog</span>
-                    </Link>
-                    <meta itemProp="position" content="2" />
-                  </div>
+                  <Link 
+                    href="/nieuws" 
+                    className="text-gray-700 hover:text-blue-600"
+                    itemProp="item"
+                  >
+                    <span itemProp="name">Blog</span>
+                  </Link>
+                  <meta itemProp="position" content="2" />
+                  <svg className="w-3 h-3 text-gray-400 mx-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4"/>
+                  </svg>
                 </li>
                 <li 
                   aria-current="page"
                   itemProp="itemListElement" 
                   itemScope
                   itemType="https://schema.org/ListItem"
+                  className="inline-flex items-center"
                 >
-                  <div className="flex items-center">
-                    <svg className="w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                      <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4"/>
-                    </svg>
-                    <span 
-                      className="ml-1 text-sm font-medium text-gray-500 md:ml-2"
-                      itemProp="name"
-                    >
-                      {post.title}
-                    </span>
-                    <meta itemProp="position" content="3" />
-                  </div>
+                  <span 
+                    className="text-gray-500 truncate max-w-[200px] sm:max-w-none"
+                    itemProp="name"
+                  >
+                    {post.title}
+                  </span>
+                  <meta itemProp="position" content="3" />
                 </li>
               </ol>
             </nav>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 mt-8">
               <div className="lg:pt-12">
                 <time 
                   className="text-sm text-gray-500 mb-4 block" 
@@ -199,7 +197,7 @@ export default async function BlogPost({ params }: PageProps) {
                 </time>
 
                 <h1 
-                  className="text-[2.75rem] leading-[1.1] lg:text-[3.5rem] font-normal tracking-[-2px] text-gray-900"
+                  className="text-[2rem] sm:text-[2.75rem] lg:text-[3.5rem] leading-[1.1] font-normal tracking-[-1px] sm:tracking-[-2px] text-gray-900"
                   itemProp="headline"
                 >
                   {post.title}
@@ -226,10 +224,10 @@ export default async function BlogPost({ params }: PageProps) {
         </div>
 
         {/* Content */}
-        <div className="px-4 mt-24">
-          <div className="max-w-5xl mx-auto">
+        <div className="px-4 mt-12 lg:mt-24">
+          <div className="max-w-3xl mx-auto">
             <div 
-              className="space-y-6" 
+              className="prose prose-lg prose-blue max-w-none" 
               itemProp="articleBody"
               lang="nl"
             >

@@ -76,12 +76,12 @@ export default async function NewsPage() {
       <section className="pt-32 pb-16 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-sm font-medium text-gray-500 tracking-wide mb-6">Nieuws</div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            <h1 className="text-[56px] leading-[1.1] mb-6">
-              De nieuwste inzichten in <br />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+            <h1 className="text-[2.5rem] lg:text-[3.5rem] leading-[1.1] mb-6">
+              De nieuwste inzichten in <br className="hidden lg:block" />
               <span className="text-[#0063f2]">AI-telefonie.</span>
             </h1>
-            <p className="text-xl text-gray-600 font-light mt-4 lg:mt-8">
+            <p className="text-lg lg:text-xl text-gray-600 font-light mt-2 lg:mt-8">
               Bedrijven kunnen tegenwoordig profiteren van geavanceerde spraakassistenten die natuurlijke, persoonlijke interacties met klanten mogelijk maken.
             </p>
           </div>
@@ -91,33 +91,33 @@ export default async function NewsPage() {
       {/* News Grid */}
       <section className="pb-24 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="space-y-12">
+          <div className="space-y-8 lg:space-y-12">
             {posts.map((post, index) => (
               <Link 
                 key={post.slug}
                 href={`/nieuws/${post.slug}`}
-                className="group flex items-center gap-8 hover:bg-gray-50 p-4 -mx-4 rounded-2xl transition-colors"
+                className="group block sm:flex items-start sm:items-center gap-4 lg:gap-8 hover:bg-gray-50 p-4 -mx-4 rounded-2xl transition-colors"
               >
-                <div className="relative w-[240px] h-[180px] rounded-xl overflow-hidden flex-shrink-0">
+                <div className="relative w-full sm:w-[240px] aspect-[4/3] sm:h-[180px] rounded-xl overflow-hidden mb-4 sm:mb-0">
                   <Image
                     src={post.coverImage || "/plaatjes/implementatie.jpg"}
                     alt={post.title}
                     fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 240px"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    priority={index === 0} // Add priority to first image
-                    loading={index === 0 ? 'eager' : 'lazy'} // Eager load first image
+                    priority={index === 0}
+                    loading={index === 0 ? 'eager' : 'lazy'}
                   />
                 </div>
                 
                 <div className="flex-1">
-                  <h2 className="text-[1.55rem] leading-[1.55rem] font-medium text-gray-900 mb-4 group-hover:text-[#0063f2] transition-colors">
+                  <h2 className="text-[1.525rem] leading-[1.5rem] tracking-[0px] font-normal text-gray-900 mb-2 sm:mb-4 group-hover:text-[#0063f2] transition-colors">
                     {post.title}
                   </h2>
-                  <p className="text-gray-600 mb-4 line-clamp-2">
+                  <p className="text-gray-600 text-sm sm:text-base mb-2 sm:mb-4 line-clamp-2">
                     {post.excerpt}
                   </p>
-                  <time className="text-gray-500" dateTime={post.date}>
+                  <time className="text-sm text-gray-500" dateTime={post.date}>
                     {format(new Date(post.date), 'MMMM d, yyyy', { locale: nl })}
                   </time>
                 </div>
