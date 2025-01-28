@@ -2,9 +2,101 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    will-change: transform, opacity;
+  }
+
+  @keyframes slide-in-right {
+    0% {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    will-change: transform, opacity;
+  }
+
+  @keyframes scale-in {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    will-change: transform, opacity;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-dm-sans: 'DM Sans', sans-serif;
+  --font-dm-mono: 'DM Mono', monospace;
+  --contrast-primary: #111111;
+  --background-default: #FFFFFF;
+  --brand-blue: #0063f2;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,5 +109,138 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-dm-sans);
+}
+
+.font-mono {
+  font-family: var(--font-dm-mono);
+}
+
+@layer base {
+  h1 {
+    margin: 0.67em 0;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: var(--contrast-primary);
+    font-size: 4.375rem;
+    font-weight: 400;
+    letter-spacing: -3px;
+    line-height: 1.1;
+  }
+
+  @media screen and (max-width: 991px) {
+    h1 {
+      font-size: 3.75rem;
+      line-height: 4rem;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    h1 {
+      font-size: 2.5rem;
+      line-height: 3rem;
+    }
+  }
+
+  h2 {
+    font-size: 3.125rem;
+    font-weight: 400;
+    letter-spacing: -2px;
+    line-height: 3.75rem;
+  }
+
+  @media screen and (max-width: 991px) {
+    h2 {
+      font-size: 2.5rem;
+      line-height: 2rem;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    h2 {
+      font-size: 2.25rem;
+      line-height: 122%;
+    }
+  }
+
+  h3, .h3-style {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.95rem;
+  }
+
+  @media screen and (max-width: 991px) {
+    h3, .h3-style {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    h3, .h3-style {
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+    }
+  }
+
+  .paragraph {
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.75rem;
+  }
+
+  @media screen and (max-width: 991px) {
+    .paragraph {
+      font-size: 1.125rem;
+      line-height: 1.575rem;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .paragraph {
+      font-weight: 400;
+    }
+  }
+
+  .h3-small {
+    font-size: 1.525rem;
+    letter-spacing: 0px;
+    font-weight: 400;
+    line-height: 1.5rem;
+  }
+
+  @media screen and (max-width: 991px) {
+    .h3-small {
+      font-size: 1rem;
+      line-height: 1.4rem;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .h3-small {
+      font-size: 1.1375rem;
+      line-height: 1.3rem;
+    }
+  }
+}
+
+.color-text-dark {
+  color: var(--background-default);
+}
+
+/* Styling for external links in blog posts */
+article a[href^="http"],
+.markdown-content a[href^="http"],
+.blog-content a[href^="http"],
+.prose a[href^="http"] {
+  color: var(--brand-blue);
+  text-decoration: underline;
+  transition: opacity 0.2s ease;
+}
+
+article a[href^="http"]:hover,
+.markdown-content a[href^="http"]:hover,
+.blog-content a[href^="http"]:hover,
+.prose a[href^="http"]:hover {
+  opacity: 0.8;
 }
