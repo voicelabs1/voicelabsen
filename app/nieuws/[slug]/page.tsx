@@ -9,6 +9,7 @@ import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import { Metadata } from 'next';
 import Script from 'next/script';
+import Link from 'next/link';
 
 interface PageProps {
   params: {
@@ -169,25 +170,30 @@ export default async function BlogPost({ params }: PageProps) {
         <div className="px-4">
           <div className="max-w-7xl mx-auto">
             {/* Breadcrumbs */}
-            <nav className="text-sm mb-8" aria-label="Breadcrumb">
-              <ol className="flex items-center space-x-2" itemScope itemType="https://schema.org/BreadcrumbList">
-                <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                  <a href="/" itemProp="item" className="text-gray-500 hover:text-gray-700">
-                    <span itemProp="name">Home</span>
-                  </a>
-                  <meta itemProp="position" content="1" />
+            <nav className="flex" aria-label="Breadcrumb">
+              <ol className="inline-flex items-center space-x-1 md:space-x-2">
+                <li className="inline-flex items-center">
+                  <Link href="/" className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600">
+                    Home
+                  </Link>
                 </li>
-                <li className="text-gray-500">/</li>
-                <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                  <a href="/nieuws" itemProp="item" className="text-gray-500 hover:text-gray-700">
-                    <span itemProp="name">Nieuws</span>
-                  </a>
-                  <meta itemProp="position" content="2" />
+                <li>
+                  <div className="flex items-center">
+                    <svg className="w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                      <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4"/>
+                    </svg>
+                    <Link href="/nieuws" className="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2">
+                      Blog
+                    </Link>
+                  </div>
                 </li>
-                <li className="text-gray-500">/</li>
-                <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                  <span itemProp="name" className="text-gray-900">{post.title}</span>
-                  <meta itemProp="position" content="3" />
+                <li aria-current="page">
+                  <div className="flex items-center">
+                    <svg className="w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                      <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4"/>
+                    </svg>
+                    <span className="ml-1 text-sm font-medium text-gray-500 md:ml-2">{post.title}</span>
+                  </div>
                 </li>
               </ol>
             </nav>
