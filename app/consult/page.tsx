@@ -10,6 +10,36 @@ declare global {
   }
 }
 
+const fadeSlideIn = {
+  '@keyframes fadeSlideIn': {
+    '0%': {
+      opacity: '0',
+      transform: 'translateX(20px)'
+    },
+    '100%': {
+      opacity: '1',
+      transform: 'translateX(0)'
+    }
+  },
+  '.animate-fadeSlideIn': {
+    animation: 'fadeSlideIn 0.5s ease-out forwards'
+  }
+};
+
+const spinAnimation = {
+  '@keyframes spin': {
+    '0%': {
+      transform: 'rotate(0deg)'
+    },
+    '100%': {
+      transform: 'rotate(360deg)'
+    }
+  },
+  '.animate-spin-slow': {
+    animation: 'spin 10s linear infinite'
+  }
+};
+
 export default function ConsultPage() {
   useEffect(() => {
     // Initialize Cal.com
@@ -60,6 +90,27 @@ export default function ConsultPage() {
     }
   }, []);
 
+  // Add reveal on scroll functionality
+  useEffect(() => {
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    };
+
+    const observerOptions = {
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const elements = document.querySelectorAll('.reveal');
+    elements.forEach(el => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <main className="min-h-screen bg-white">
       <Header />
@@ -77,11 +128,11 @@ export default function ConsultPage() {
         </video>
         <div className="relative max-w-7xl mx-auto px-4">
           <div className="max-w-3xl">
-            <h1 className="text-white mb-6">
+            <h1 className="text-white mb-6 animate-fadeSlideIn [animation-duration:1.2s]">
               Boek een<br />
               <span className="text-[#0063f2]">vrijblijvend</span> consult
             </h1>
-            <p className="paragraph text-white/80 mb-8">
+            <p className="paragraph text-white/80 mb-8 reveal">
               Benieuwd hoe onze AI-receptionisen uw bedrijf kunnen ondersteunen? Boek gemakkelijk een vrijblijvend consult met een van onze specialisten.
             </p>
           </div>
@@ -92,8 +143,8 @@ export default function ConsultPage() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="space-y-4">
-              <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center">
+            <div className="space-y-4 reveal">
+              <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center animate-spin-slow">
                 <svg className="w-6 h-6 text-[#0063f2]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -101,17 +152,17 @@ export default function ConsultPage() {
               <h3>Persoonlijk advies</h3>
               <p className="text-gray-600">Krijg direct inzicht in hoe AI-telefonie jouw specifieke situatie kan verbeteren.</p>
             </div>
-            <div className="space-y-4">
-              <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center">
+            <div className="space-y-4 reveal">
+              <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center animate-spin-slow">
                 <svg className="w-6 h-6 text-[#0063f2]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                 </svg>
               </div>
-              <h3>Concrete oplossingen</h3>
+              <h3>Concreet voorstel</h3>
               <p className="text-gray-600">Ontdek praktische toepassingen en krijg een duidelijk implementatieplan.</p>
             </div>
-            <div className="space-y-4">
-              <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center">
+            <div className="space-y-4 reveal">
+              <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center animate-spin-slow">
                 <svg className="w-6 h-6 text-[#0063f2]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
@@ -123,8 +174,8 @@ export default function ConsultPage() {
         </div>
       </section>
 
-      {/* Calendar Section */}
-      <section className="py-12 px-4 bg-gray-50">
+      {/* Calendar Section with fade-in animation */}
+      <section className="py-12 px-4 bg-gray-50 reveal">
         <div className="max-w-7xl mx-auto">
           <div style={{ width: '100%', height: '700px' }} id="my-cal-inline"></div>
         </div>

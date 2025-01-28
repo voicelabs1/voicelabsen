@@ -278,10 +278,12 @@ export default function Home() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/consult"
-                  className="bg-[#0063f2] text-white px-8 py-4 rounded-xl hover:bg-[#004dbd] transition-all duration-300 text-[17px] font-medium hover:scale-[1.02]"
-                  aria-label="Word partner bij Voicelabs"
+                  className="bg-[#0063f2] text-white px-8 py-4 rounded-xl text-lg hover:bg-blue-600 transition-colors inline-flex items-center gap-2"
                 >
-                  Word partner
+                  Start nu
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </Link>
                 <Link
                   href="/how-it-works"
@@ -913,11 +915,14 @@ export default function Home() {
                 </div>
                 <p className="text-gray-600 mb-6">Start eenvoudig met AI-telefonie en verbeter direct je bereikbaarheid.</p>
                 <Link 
-                  href="/contact" 
+                  href="/consult" 
                   className="block text-center bg-white border border-[#0063f2] text-[#0063f2] py-3 px-6 rounded-lg hover:bg-[#0063f2] hover:text-white transition-colors mb-8"
                   aria-label="Vraag het Basis pakket aan"
                 >
                   Direct aanvragen
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </Link>
                 <ul className="space-y-3" aria-label="Basis pakket features">
                   <li className="flex items-start gap-3">
@@ -995,8 +1000,14 @@ export default function Home() {
                   <span className="text-white/90">/maand</span>
                 </div>
                 <p className="text-white/90 mb-6">Automatiseer en schaal je klantenservice én sales met een krachtige AI-oplossing.</p>
-                <Link href="/contact" className="block text-center bg-white text-[#003366] py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors mb-8">
-                  Start nu
+                <Link
+                  href="/consult"
+                  className="bg-[#0063f2] text-white px-6 py-3 rounded-xl hover:bg-blue-600 transition-colors inline-flex items-center justify-center gap-2 w-full"
+                >
+                  Direct aanvragen
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </Link>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
@@ -1089,8 +1100,14 @@ export default function Home() {
                   <span className="text-4xl font-semibold">Op aanvraag</span>
                 </div>
                 <p className="text-gray-600 mb-6">Volledig op maat gemaakte automatiseringen voor je bedrijfsprocessen.</p>
-                <Link href="/contact" className="block text-center bg-white border border-[#0063f2] text-[#0063f2] py-3 px-6 rounded-lg hover:bg-[#0063f2] hover:text-white transition-colors mb-8">
+                <Link
+                  href="/consult"
+                  className="bg-[#0063f2] text-white px-8 py-4 rounded-xl text-lg hover:bg-blue-600 transition-colors inline-flex items-center gap-2"
+                >
                   Direct aanvragen
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </Link>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
