@@ -81,42 +81,17 @@ export default function Home() {
   };
 
   const validatePhoneNumber = (phone: string) => {
-    // Remove all spaces and dashes
-    const cleanPhone = phone.replace(/[\s-]/g, '');
-    
-    // Check if it starts with +31 and has exactly 11 digits after (Netherlands format)
+    // Basic validation for Dutch phone numbers
     const phoneRegex = /^\+31[1-9][0-9]{8}$/;
-    
-    return phoneRegex.test(cleanPhone);
+    return phoneRegex.test(phone);
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    
-    if (name === 'phone') {
-      // Remove any non-digit characters except + and format the number
-      let cleanPhone = value.replace(/[^\d+]/g, '');
-      
-      // Ensure it starts with +31
-      if (!cleanPhone.startsWith('+')) {
-        if (cleanPhone.startsWith('31')) {
-          cleanPhone = '+' + cleanPhone;
-        } else if (cleanPhone.startsWith('0')) {
-          cleanPhone = '+31' + cleanPhone.substring(1);
-        }
-      }
-      
-      setPhoneError(null);
-      setFormData(prev => ({
-        ...prev,
-        [name]: cleanPhone
-      }));
-    } else {
-      setFormData(prev => ({
-        ...prev,
-        [name]: value
-      }));
-    }
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -349,7 +324,7 @@ export default function Home() {
                         disabled={isSubmitting || submitSuccess}
                         aria-required="true"
                         className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-sm disabled:bg-gray-100 disabled:text-gray-500"
-                        placeholder="john@bedrijf.nl"
+                        placeholder="john@example.com"
                       />
                     </div>
                     <div>
@@ -365,11 +340,11 @@ export default function Home() {
                         required
                         disabled={isSubmitting || submitSuccess}
                         aria-required="true"
-                        className={`w-full px-3 py-2 border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-sm disabled:bg-gray-100 disabled:text-gray-500 ${phoneError ? 'border-red-500' : 'border-gray-300'}`}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-sm disabled:bg-gray-100 disabled:text-gray-500"
                         placeholder="+31612345678"
                       />
                       {phoneError && (
-                        <p className="mt-1 text-xs text-red-500">{phoneError}</p>
+                        <p className="mt-1 text-sm text-red-600">{phoneError}</p>
                       )}
                     </div>
                     {submitError && (
@@ -406,8 +381,8 @@ export default function Home() {
                 {/* Partner logos carousel */}
                 <div className="overflow-hidden relative" role="region" aria-label="Partner logos">
                   {/* Fade out edges */}
-                  <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10" />
-                  <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10" />
+                  <div className="absolute left-0 top-0 bottom-0 w-[100px] bg-gradient-to-r from-[#f8f9fb] via-[#f8f9fb] to-transparent z-20 pointer-events-none" />
+                  <div className="absolute right-0 top-0 bottom-0 w-[100px] bg-gradient-to-l from-[#f8f9fb] via-[#f8f9fb] to-transparent z-20 pointer-events-none" />
                   
                   <div className="flex animate-scroll">
                     {/* First set of logos */}
@@ -620,17 +595,17 @@ export default function Home() {
         >
           <source src="/comps/bg.mp4" type="video/mp4" />
         </video>
-        <section className="text-white py-24 relative">
+        <section className="text-white py-16 sm:py-24 relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-16">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-x-16">
               <div className="lg:col-span-4 reveal">
-                <h2 className="mb-16 lg:mb-0">
-                  Ontdek functies<br />waar je dol op zult zijn.
+                <h2 className="text-center lg:text-left mb-8 lg:mb-0">
+                  Ervaar de<br />toekomst van<br />klantenservice.
                 </h2>
               </div>
               <div className="lg:col-span-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
-                  <div className="space-y-8 reveal">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-x-16 sm:gap-y-12">
+                  <div className="space-y-6 sm:space-y-8 reveal">
                     <div className="flex items-start gap-4">
                       <div className="mt-1 flex-shrink-0">
                         <div className="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center">
@@ -639,7 +614,7 @@ export default function Home() {
                           </svg>
                         </div>
                       </div>
-                      <span className="paragraph text-white">Maken en beheren van boekingen en reserveringen</span>
+                      <span className="paragraph text-white">Maakt en beheert afspraken en reserveringen</span>
                     </div>
 
                     <div className="flex items-start gap-4">
@@ -650,7 +625,7 @@ export default function Home() {
                           </svg>
                         </div>
                       </div>
-                      <span className="paragraph text-white">Handel alle FAQs van jouw bedrijf, producten en diensten af</span>
+                      <span className="paragraph text-white">Beantwoordt alle veelgestelde vragen over jouw bedrijf</span>
                     </div>
 
                     <div className="flex items-start gap-4">
@@ -661,11 +636,11 @@ export default function Home() {
                           </svg>
                         </div>
                       </div>
-                      <span className="paragraph text-white">Directe bevestigingsberichten via Whatsapp</span>
+                      <span className="paragraph text-white">Automatische bevestigingen via WhatsApp</span>
                     </div>
                   </div>
 
-                  <div className="space-y-8 reveal [animation-delay:200ms]">
+                  <div className="space-y-6 sm:space-y-8 reveal [animation-delay:200ms]">
                     <div className="flex items-start gap-4">
                       <div className="mt-1 flex-shrink-0">
                         <div className="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center">
@@ -674,7 +649,7 @@ export default function Home() {
                           </svg>
                         </div>
                       </div>
-                      <span className="paragraph text-white">Slimme doorschakel mogelijkheden en terugbelverzoeken</span>
+                      <span className="paragraph text-white">Gemakkelijk doorschakelen naar een menselijke medewerker</span>
                     </div>
 
                     <div className="flex items-start gap-4">
@@ -685,7 +660,7 @@ export default function Home() {
                           </svg>
                         </div>
                       </div>
-                      <span className="paragraph text-white">App met real-time inzichten en gespreksdetails</span>
+                      <span className="paragraph text-white">Realtime inzicht in gesprekken via onze app</span>
                     </div>
 
                     <div className="flex items-start gap-4">
@@ -696,7 +671,7 @@ export default function Home() {
                           </svg>
                         </div>
                       </div>
-                      <span className="paragraph text-white">Notificaties voor follow-ups en actiepunten</span>
+                      <span className="paragraph text-white">Slimme meldingen voor opvolging en acties</span>
                     </div>
                   </div>
                 </div>
@@ -704,7 +679,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-    </div>
+      </div>
 
       {/* Process Section */}
       <section className="py-24 px-4 bg-white">

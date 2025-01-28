@@ -1,12 +1,33 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
 import { format } from 'date-fns';
 import { nl } from 'date-fns/locale';
+import Link from 'next/link';
+import Image from 'next/image';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import { Metadata } from 'next';
+
+// Enable ISR - revalidate every hour
+export const revalidate = 3600;
+
+// Add caching headers
+export const headers = {
+  'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400',
+};
+
+// Add metadata for better SEO
+export const metadata: Metadata = {
+  title: 'Blog | Voicelabs',
+  description: 'Lees de nieuwste inzichten over AI-telefonie en klantenservice automatisering.',
+  openGraph: {
+    title: 'Blog | Voicelabs',
+    description: 'Lees de nieuwste inzichten over AI-telefonie en klantenservice automatisering.',
+    type: 'website',
+    locale: 'nl_NL',
+  },
+};
 
 interface Post {
   title: string;
@@ -16,22 +37,36 @@ interface Post {
   slug: string;
 }
 
-export default function NewsPage() {
-  const [posts, setPosts] = useState<Post[]>([]);
+async function getPosts(): Promise<Post[]> {
+  const postsDirectory = path.join(process.cwd(), 'content/posts');
+  const filenames = fs.readdirSync(postsDirectory);
+  
+  const posts = filenames
+    .filter(filename => filename.endsWith('.md'))
+    .map(filename => {
+      const filePath = path.join(postsDirectory, filename);
+      const fileContents = fs.readFileSync(filePath, 'utf8');
+      const { data } = matter(fileContents);
+      
+      return {
+        title: data.title,
+        date: data.date,
+        excerpt: data.excerpt,
+        coverImage: data.coverImage,
+        slug: filename.replace('.md', '')
+      };
+    })
+    .sort((a, b) => {
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
+      return dateB.getTime() - dateA.getTime();
+    });
+  
+  return posts;
+}
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const response = await fetch('/api/posts');
-        const data = await response.json();
-        setPosts(data);
-      } catch (error) {
-        console.error('Error fetching posts:', error);
-      }
-    };
-
-    fetchPosts();
-  }, []);
+export default async function NewsPage() {
+  const posts = await getPosts();
 
   return (
     <main className="min-h-screen bg-white">
@@ -57,7 +92,7 @@ export default function NewsPage() {
       <section className="pb-24 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="space-y-12">
-            {posts.map((post) => (
+            {posts.map((post, index) => (
               <Link 
                 key={post.slug}
                 href={`/nieuws/${post.slug}`}
@@ -68,7 +103,10 @@ export default function NewsPage() {
                     src={post.coverImage || "/plaatjes/implementatie.jpg"}
                     alt={post.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    priority={index === 0} // Add priority to first image
+                    loading={index === 0 ? 'eager' : 'lazy'} // Eager load first image
                   />
                 </div>
                 

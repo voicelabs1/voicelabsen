@@ -77,39 +77,19 @@ async function createRetellCall(name: string, email: string, phone: string) {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { naam, emailadres, telefoonnummer, vraag } = body;
+    const { name, email, phone } = body;
 
-    const response = await fetch('https://api.airtable.com/v0/appSItr9MR2Jyktds/Contactformulier', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${process.env.AIRTABLE_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        records: [
-          {
-            fields: {
-              "Naam": naam,
-              "Emailadres": emailadres,
-              "Telefoonnummer": telefoonnummer,
-              "Vraag": vraag
-            },
-          },
-        ],
-      }),
-    });
+    // First save to Airtable
+    await addToAirtable(name, email, phone);
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      console.error('Airtable Error:', errorData);
-      throw new Error(`Failed to submit to Airtable: ${JSON.stringify(errorData)}`);
-    }
+    // Then create Retell call
+    await createRetellCall(name, email, phone);
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error('Error submitting to Airtable:', error);
+    console.error('Error in submit-contact:', error);
     return NextResponse.json(
-      { error: 'Failed to submit form' },
+      { error: 'Failed to process request' },
       { status: 500 }
     );
   }
