@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { useState, useEffect } from 'react';
+import Script from 'next/script';
 
 const fadeSlideIn = {
   '@keyframes fadeSlideIn': {
@@ -179,7 +180,86 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white" role="main" aria-label="Voicelabs - AI-Gestuurde Telefonisten">
       <Header />
-      
+
+      {/* Add Organization Schema */}
+      <Script id="organization-schema" type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Organization',
+          name: 'Voicelabs',
+          url: 'https://voicelabs.nl',
+          logo: 'https://voicelabs.nl/plaatjes/logovoicelabs.svg',
+          description: 'Voicelabs levert AI-gestuurde telefonisten voor bedrijven, waarmee ze hun klantenservice kunnen automatiseren en optimaliseren.',
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: 'Amsterdam',
+            addressCountry: 'NL'
+          },
+          contactPoint: {
+            '@type': 'ContactPoint',
+            telephone: '',
+            contactType: 'customer service',
+            email: 'contact@voicelabs.nl'
+          }
+        })}
+      </Script>
+
+      {/* Add Product Schema */}
+      <Script id="product-schema" type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Product',
+          name: 'AI-Telefonist',
+          description: 'AI-gestuurde telefonist voor 24/7 professionele klantenservice',
+          brand: {
+            '@type': 'Brand',
+            name: 'Voicelabs'
+          },
+          offers: {
+            '@type': 'AggregateOffer',
+            priceCurrency: 'EUR',
+            lowPrice: prices.basis.yearly,
+            highPrice: prices.business.monthly,
+            priceValidUntil: new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().split('T')[0],
+            availability: 'https://schema.org/InStock'
+          }
+        })}
+      </Script>
+
+      {/* Add FAQ Schema */}
+      <Script id="faq-schema" type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: [
+            {
+              '@type': 'Question',
+              name: 'Wat is AI-telefonie?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'AI-telefonie gebruikt kunstmatige intelligentie om telefoongesprekken te beheren. Het zorgt ervoor dat je bedrijf 24/7 bereikbaar is, gesprekken professioneel worden afgehandeld en je klantenservice wordt geautomatiseerd.'
+              }
+            },
+            {
+              '@type': 'Question',
+              name: 'Wat is een AI-receptionist?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'AI receptionisten zijn slimme digitale assistenten die net als mensen praten en begrijpen wat klanten willen. Ze nemen routinetaken over zoals afspraken maken en bestellingen opnemen.'
+              }
+            },
+            {
+              '@type': 'Question',
+              name: 'Hoe werkt de onboarding?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'De onboarding is simpel en snel - binnen een dag ben je live. We helpen je met het instellen van je bedrijfsgegevens, stem en doorschakeling.'
+              }
+            }
+          ]
+        })}
+      </Script>
+
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 px-4 overflow-hidden" aria-label="Hero sectie">
         <div className="absolute inset-0 bg-gradient-to-b from-white via-[#0063f2]/5 to-[#0063f2]/10 pointer-events-none" aria-hidden="true" />

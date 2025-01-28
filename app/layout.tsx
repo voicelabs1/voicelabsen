@@ -8,6 +8,8 @@ const dmSans = DM_Sans({
   weight: ['300', '400', '500', '600', '700', '800', '900'],
   display: 'swap',
   variable: '--font-dm-sans',
+  preload: true,
+  adjustFontFallback: true
 });
 
 const dmMono = DM_Mono({
@@ -15,60 +17,56 @@ const dmMono = DM_Mono({
   weight: ['300', '400', '500'],
   display: 'swap',
   variable: '--font-dm-mono',
+  preload: true,
+  adjustFontFallback: true
 });
 
 export const metadata: Metadata = {
-  title: "Automatiseer je Bedrijf met AI-receptionisten | 24/7 Klantenservice",
-  description: "Verbeter je klantenservice met AI-receptionisten. 24/7 professionele ondersteuning, automatische afspraken en naadloze integratie met je bestaande systemen.",
-  keywords: "AI telefonist, AI receptionist,klantenservice automatisering, virtuele receptionist, AI klantenservice, voice AI, automatische telefoonbeantwoording, bedrijfsautomatisering",
-  authors: [{ name: "Voicelabs" }],
-  creator: "Voicelabs",
-  publisher: "Voicelabs",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
+  title: {
+    template: '%s | Voicelabs',
+    default: 'Voicelabs - AI Telefonist voor uw bedrijf',
   },
-  metadataBase: new URL('https://voicelabs.nl'),
-  alternates: {
-    canonical: '/',
-  },
-  openGraph: {
-    title: "Automatiseer je Bedrijf met AI-Receptionisten | 24/7 Klantenservice",
-    description: "Verbeter je klantenservice met AI-receptionisten. 24/7 professionele ondersteuning, automatische afspraken en naadloze integratie met je bestaande systemen.",
-    url: 'https://voicelabs.nl',
-    siteName: 'Voicelabs',
-    images: [
-      {
-        url: '/plaatjes/aireceptionist.webp',
-        width: 1200,
-        height: 630,
-        alt: 'Voicelabs AI Telefonisten',
-      },
-    ],
-    locale: 'nl_NL',
-    type: 'website',
-  },
+  description: 'Voicelabs biedt een AI-telefonist die uw telefoongesprekken beantwoordt, routeert en afhandelt. Ontdek hoe onze AI-receptionist uw klantenservice kan verbeteren.',
+  keywords: 'AI telefonist, AI receptionist, klantenservice automatisering, virtuele receptionist, telefonie automatisering',
+  authors: [{ name: 'Voicelabs' }],
+  publisher: 'Voicelabs',
   robots: {
     index: true,
     follow: true,
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
+      'max-video-preview': -1,
     },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'nl_NL',
+    url: 'https://voicelabs.nl',
+    siteName: 'Voicelabs',
+    title: 'Voicelabs - AI Telefonist voor uw bedrijf',
+    description: 'Voicelabs biedt een AI-telefonist die uw telefoongesprekken beantwoordt, routeert en afhandelt.',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Voicelabs - AI Telefonist',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Voicelabs | AI-Gestuurde Telefonisten voor Bedrijven",
-    description: "Verbeter je klantenservice met AI-telefonisten. 24/7 professionele ondersteuning.",
-    images: ['/plaatjes/aireceptionist.webp'],
+    title: 'Voicelabs - AI Telefonist voor uw bedrijf',
+    description: 'Voicelabs biedt een AI-telefonist die uw telefoongesprekken beantwoordt, routeert en afhandelt.',
+    images: ['/og-image.jpg'],
   },
-  verification: {
-    google: 'your-google-verification-code', // Add your Google verification code
-  }
+  alternates: {
+    canonical: 'https://voicelabs.nl',
+  },
+  metadataBase: new URL('https://voicelabs.nl'),
 };
 
 export default function RootLayout({
@@ -81,6 +79,7 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="alternate" type="application/rss+xml" title="Voicelabs Blog RSS Feed" href="/feed.xml" />
         <meta name="theme-color" content="#0063f2" />
       </head>
       <body className={`${dmSans.className} antialiased`}>

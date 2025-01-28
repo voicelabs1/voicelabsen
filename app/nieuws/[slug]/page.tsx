@@ -7,6 +7,8 @@ import { format } from 'date-fns';
 import { nl } from 'date-fns/locale';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
+import { Metadata } from 'next';
+import Script from 'next/script';
 
 interface PageProps {
   params: {
@@ -20,10 +22,51 @@ interface BlogPost {
   coverImage: string;
   content: string;
   slug: string;
+  excerpt?: string;
+  author?: string;
 }
 
 interface MDXComponentProps {
   children: React.ReactNode;
+}
+
+// Generate metadata for the page
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const post = await getPost(params.slug);
+  const excerpt = post.excerpt || post.content.slice(0, 160) + '...';
+  const ogImage = post.coverImage || "/nieuws/implementatie.jpg";
+  
+  return {
+    title: `${post.title} | Voicelabs Blog`,
+    description: excerpt,
+    keywords: "AI telefonist, AI receptionist, klantenservice automatisering, virtuele receptionist",
+    authors: [{ name: post.author || "Voicelabs" }],
+    publisher: "Voicelabs",
+    openGraph: {
+      title: post.title,
+      description: excerpt,
+      type: 'article',
+      publishedTime: post.date,
+      authors: [post.author || 'Voicelabs'],
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: excerpt,
+      images: [ogImage],
+    },
+    alternates: {
+      canonical: `https://voicelabs.nl/nieuws/${params.slug}`,
+    },
+  };
 }
 
 async function getPost(slug: string): Promise<BlogPost> {
@@ -44,7 +87,9 @@ async function getPost(slug: string): Promise<BlogPost> {
     date: data.date,
     coverImage: data.coverImage,
     content: contentWithoutTitle,
-    slug
+    slug,
+    excerpt: data.excerpt,
+    author: data.author
   };
 }
 
@@ -83,22 +128,84 @@ const components = {
 
 export default async function BlogPost({ params }: PageProps) {
   const post = await getPost(params.slug);
+  const formattedDate = format(new Date(post.date), 'MMMM d, yyyy', { locale: nl });
 
   return (
     <main className="min-h-screen bg-white">
       <Header />
       
-      <article className="pt-32 pb-24">
+      {/* Add JSON-LD Schema */}
+      <Script id="article-schema" type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: post.title,
+          image: [post.coverImage || "/nieuws/implementatie.jpg"],
+          datePublished: post.date,
+          dateModified: post.date,
+          author: [{
+            '@type': 'Organization',
+            name: 'Voicelabs',
+            url: 'https://voicelabs.nl'
+          }],
+          publisher: {
+            '@type': 'Organization',
+            name: 'Voicelabs',
+            logo: {
+              '@type': 'ImageObject',
+              url: 'https://voicelabs.nl/plaatjes/logovoicelabs.svg'
+            }
+          },
+          description: post.excerpt || post.content.slice(0, 160) + '...',
+          mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': `https://voicelabs.nl/nieuws/${params.slug}`
+          }
+        })}
+      </Script>
+      
+      <article className="pt-32 pb-24" itemScope itemType="https://schema.org/Article">
         {/* Hero Section */}
         <div className="px-4">
           <div className="max-w-7xl mx-auto">
+            {/* Breadcrumbs */}
+            <nav className="text-sm mb-8" aria-label="Breadcrumb">
+              <ol className="flex items-center space-x-2" itemScope itemType="https://schema.org/BreadcrumbList">
+                <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+                  <a href="/" itemProp="item" className="text-gray-500 hover:text-gray-700">
+                    <span itemProp="name">Home</span>
+                  </a>
+                  <meta itemProp="position" content="1" />
+                </li>
+                <li className="text-gray-500">/</li>
+                <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+                  <a href="/nieuws" itemProp="item" className="text-gray-500 hover:text-gray-700">
+                    <span itemProp="name">Nieuws</span>
+                  </a>
+                  <meta itemProp="position" content="2" />
+                </li>
+                <li className="text-gray-500">/</li>
+                <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+                  <span itemProp="name" className="text-gray-900">{post.title}</span>
+                  <meta itemProp="position" content="3" />
+                </li>
+              </ol>
+            </nav>
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="lg:pt-12">
-                <time className="text-sm text-gray-500 mb-4 block" dateTime={post.date}>
-                  {format(new Date(post.date), 'MMMM d, yyyy', { locale: nl })}
+                <time 
+                  className="text-sm text-gray-500 mb-4 block" 
+                  dateTime={post.date}
+                  itemProp="datePublished"
+                >
+                  {formattedDate}
                 </time>
 
-                <h1 className="text-[2.75rem] leading-[1.1] lg:text-[3.5rem] font-normal tracking-[-2px] text-gray-900">
+                <h1 
+                  className="text-[2.75rem] leading-[1.1] lg:text-[3.5rem] font-normal tracking-[-2px] text-gray-900"
+                  itemProp="headline"
+                >
                   {post.title}
                 </h1>
               </div>
@@ -110,6 +217,7 @@ export default async function BlogPost({ params }: PageProps) {
                   fill
                   className="object-cover"
                   priority
+                  itemProp="image"
                 />
               </div>
             </div>
@@ -119,7 +227,7 @@ export default async function BlogPost({ params }: PageProps) {
         {/* Content */}
         <div className="px-4 mt-24">
           <div className="max-w-5xl mx-auto">
-            <div className="space-y-6">
+            <div className="space-y-6" itemProp="articleBody">
               <MDXRemote 
                 source={post.content}
                 components={components}
