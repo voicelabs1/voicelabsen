@@ -67,12 +67,12 @@ export default function Home() {
 
   const prices = {
     basis: {
-      monthly: 385,
-      yearly: 345
+      monthly: 395,
+      yearly: 349
     },
     business: {
-      monthly: 850,
-      yearly: 765
+      monthly: 995,
+      yearly: 895
     }
   };
 
@@ -503,7 +503,7 @@ export default function Home() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                       </div>
-                      <span className="text-sm text-gray-600">45 minuten bel-tijd bespaard</span>
+                      <span className="text-sm text-gray-600">55 minuten bel-tijd bespaard</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 bg-blue-50 rounded flex items-center justify-center">
@@ -511,7 +511,7 @@ export default function Home() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                         </svg>
                       </div>
-                      <span className="text-sm text-gray-600">7 boekingen gemaakt</span>
+                      <span className="text-sm text-gray-600">9 boekingen gemaakt</span>
                     </div>
                   </div>
                 </div>
@@ -861,7 +861,7 @@ export default function Home() {
               </span>
             </div>
             <span className="text-sm text-emerald-600 font-medium whitespace-nowrap">
-              (Bespaar 10%)
+              (Bespaar 15%)
             </span>
           </div>
 
