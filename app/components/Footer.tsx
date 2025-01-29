@@ -1,8 +1,12 @@
 'use client';
 
 import Link from 'next/link';
+import { useState } from 'react';
+import CookieSettingsModal from './CookieSettings';
 
 const Footer = () => {
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+
   return (
     <footer className="bg-[#004dbd] text-white relative overflow-hidden">
       <div className="absolute inset-0 opacity-20 pointer-events-none">
@@ -38,12 +42,16 @@ const Footer = () => {
             <Link href="/ethische-kader" className="text-sm text-white/90 hover:text-white transition-colors">
               Ethisch Kader
             </Link>
-            <button className="text-sm text-white/90 hover:text-white transition-colors">
+            <button 
+              onClick={() => setIsSettingsOpen(true)}
+              className="text-sm text-white/90 hover:text-white transition-colors"
+            >
               Cookies Instellingen
             </button>
           </nav>
         </div>
       </div>
+      <CookieSettingsModal isOpen={isSettingsOpen} onClose={() => setIsSettingsOpen(false)} />
     </footer>
   );
 };
