@@ -260,13 +260,13 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>
-                <Link
-                  href="/how-it-works"
+                <button
+                  onClick={() => document.getElementById('future')?.scrollIntoView({ behavior: 'smooth' })}
                   className="text-gray-600 hover:text-gray-900 px-6 py-4 text-[15px] font-medium transition-colors duration-300"
                   aria-label="Lees hoe Voicelabs werkt"
                 >
                   Hoe werken wij?
-                </Link>
+                </button>
               </div>
             </div>
             
@@ -595,7 +595,7 @@ export default function Home() {
         >
           <source src="/comps/bg.mp4" type="video/mp4" />
         </video>
-        <section className="text-white py-16 sm:py-24 relative">
+        <section id="future" className="text-white py-16 sm:py-24 relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-x-16">
               <div className="lg:col-span-4 reveal">
