@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-async function addToAirtable(naam: string, emailadres: string, telefoonnummer: string, vraag: string) {
+async function addToAirtable(name: string, email: string, phone: string) {
   try {
     const response = await fetch(
       'https://api.airtable.com/v0/appSItr9MR2Jyktds/Leads',
@@ -12,10 +12,9 @@ async function addToAirtable(naam: string, emailadres: string, telefoonnummer: s
         },
         body: JSON.stringify({
           fields: {
-            Naam: naam,
-            Email: emailadres,
-            Telefoonnummer: telefoonnummer,
-            Vraag: vraag
+            Naam: name,
+            Email: email,
+            Telefoonnummer: phone
           },
           typecast: true
         }),
@@ -35,14 +34,34 @@ async function addToAirtable(naam: string, emailadres: string, telefoonnummer: s
   }
 }
 
-async function createRetellCall(naam: string, emailadres: string, telefoonnummer: string) {
+// Simple helper function to validate and format phone number
+function formatPhoneNumber(phone: string): string {
+  if (!phone) {
+    throw new Error('Phone number is required');
+  }
+
+  // If already in correct format, return as is
+  if (phone.startsWith('+31') && phone.length === 12) {
+    return phone;
+  }
+
+  // If starts with 0, convert to +31 format
+  if (phone.startsWith('0')) {
+    return '+31' + phone.substring(1);
+  }
+
+  // If no formatting needed, add +31
+  return '+31' + phone;
+}
+
+async function createRetellCall(name: string, email: string, phone: string) {
   try {
     const requestBody = {
       from_number: '+3197010205229',
-      to_number: telefoonnummer,
+      to_number: phone,
       retell_llm_dynamic_variables: {
-        customerName: naam,
-        customerEmail: emailadres,
+        customerName: name,
+        customerEmail: email,
         huidige_datum: new Date().toISOString(),
       },
       override_agent_id: 'agent_8d40939af32079fc9f8f4be22b',
@@ -77,14 +96,20 @@ async function createRetellCall(naam: string, emailadres: string, telefoonnummer
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
-    const { naam, emailadres, telefoonnummer, vraag } = body;
+    const { name, email, phone } = await request.json();
+
+    if (!name || !email || !phone) {
+      return NextResponse.json(
+        { error: 'Missing required fields' },
+        { status: 400 }
+      );
+    }
 
     // First save to Airtable
-    await addToAirtable(naam, emailadres, telefoonnummer, vraag);
+    await addToAirtable(name, email, phone);
 
     // Then create Retell call
-    await createRetellCall(naam, emailadres, telefoonnummer);
+    await createRetellCall(name, email, phone);
 
     return NextResponse.json({ success: true });
   } catch (error) {

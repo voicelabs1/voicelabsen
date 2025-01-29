@@ -614,7 +614,7 @@ export default function Home() {
                           </svg>
                         </div>
                       </div>
-                      <span className="paragraph text-white">Maakt en beheert afspraken en reserveringen</span>
+                      <span className="paragraph text-white">Het maken en beheren van afspraken en reserveringen. </span>
                     </div>
 
                     <div className="flex items-start gap-4">
@@ -625,7 +625,7 @@ export default function Home() {
                           </svg>
                         </div>
                       </div>
-                      <span className="paragraph text-white">Beantwoordt alle veelgestelde vragen over jouw bedrijf</span>
+                      <span className="paragraph text-white">Het beantwoorden van de meest voorkomende vragen binnen het bedrijf.</span>
                     </div>
 
                     <div className="flex items-start gap-4">
@@ -636,7 +636,7 @@ export default function Home() {
                           </svg>
                         </div>
                       </div>
-                      <span className="paragraph text-white">Automatische bevestigingen via WhatsApp</span>
+                      <span className="paragraph text-white">Het versturen van automatische bevestigingen via WhatsApp</span>
                     </div>
                   </div>
 
@@ -649,7 +649,7 @@ export default function Home() {
                           </svg>
                         </div>
                       </div>
-                      <span className="paragraph text-white">Gemakkelijk doorschakelen naar een menselijke medewerker</span>
+                      <span className="paragraph text-white">Altijd gemakkelijk doorschakelen naar een menselijke medewerker</span>
                     </div>
 
                     <div className="flex items-start gap-4">
@@ -741,7 +741,7 @@ export default function Home() {
                   <div className="animate-fadeSlideIn absolute inset-0 transition-all duration-500 ease-in-out">
                     <h3 className="mb-4">Diepgaande analyse</h3>
                     <p className="paragraph text-gray-600">
-                      We starten met een grondige analyse van uw bedrijf, processen en klantbehoeften. Ons team werkt nauw met u samen om de specifieke eisen en doelen van je bedrijf te begrijpen.
+                      We starten met een grondige analyse van uw bedrijf, processen en klantbehoeften. Ons team werkt nauw samen om de specifieke eisen en doelen van je bedrijf te begrijpen.
                     </p>
                     <ul className="mt-4 space-y-4">
                       <li className="paragraph text-gray-600 flex items-start gap-3">
@@ -937,7 +937,7 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-gray-600 flex-1 text-[15px] leading-snug">Transcripties per e-mail – alles overzichtelijk in uw inbox.</span>
+                    <span className="text-gray-600 flex-1 text-[15px] leading-snug">Transcripties per e-mail – alles overzichtelijk je inbox.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5" aria-hidden="true">
@@ -1119,7 +1119,7 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-gray-600 flex-1 text-[15px] leading-snug">Geavanceerde workflows – volledig afgestemd op uw specifieke bedrijfsprocessen.</span>
+                    <span className="text-gray-600 flex-1 text-[15px] leading-snug">Geavanceerde workflows – volledig afgestemd op je specifieke bedrijfsprocessen.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5">

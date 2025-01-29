@@ -177,11 +177,33 @@ export default function ConsultPage() {
       {/* Calendar Section with fade-in animation */}
       <section className="py-12 px-4 bg-gray-50 reveal">
         <div className="max-w-7xl mx-auto">
-          <div style={{ width: '100%', height: '700px' }} id="my-cal-inline"></div>
+          <div className="relative">
+            <div style={{ width: '100%', height: '1000px' }} id="my-cal-inline"></div>
+          </div>
         </div>
       </section>
 
+      <div className="h-[200px]"></div> {/* Extra space for time selection dropdown */}
       <Footer />
+
+      <style jsx global>{`
+        #my-cal-inline {
+          min-height: 1000px !important;
+        }
+        #my-cal-inline iframe {
+          width: 100% !important;
+          height: 100% !important;
+          border: none;
+          background: transparent !important;
+        }
+        /* Ensure dropdowns and popovers appear above other content */
+        .cal-com-popup-overlay {
+          z-index: 100;
+        }
+        .cal-com-popup-content {
+          z-index: 101;
+        }
+      `}</style>
     </main>
   );
 } 
