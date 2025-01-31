@@ -495,7 +495,7 @@ export default function Home() {
                 />
                 {/* Summary Card */}
                 <div className="absolute bottom-8 right-0 bg-white rounded-xl shadow-lg p-6 max-w-sm transform translate-x-12 animate-slide-in-right">
-                  <h4 className="text-lg font-medium text-gray-800 mb-4">Dagelijkse samenvatting</h4>
+                  <h4 className="text-lg font-medium text-gray-800 mb-4">Dagelijkse impact</h4>
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 bg-blue-50 rounded flex items-center justify-center">
@@ -503,7 +503,7 @@ export default function Home() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                       </div>
-                      <span className="text-sm text-gray-600">55 minuten bel-tijd bespaard</span>
+                      <span className="text-sm text-gray-600">53 belminuten bespaard</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 bg-blue-50 rounded flex items-center justify-center">
@@ -511,7 +511,7 @@ export default function Home() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                         </svg>
                       </div>
-                      <span className="text-sm text-gray-600">9 boekingen gemaakt</span>
+                      <span className="text-sm text-gray-600">9 nieuwe boekingen</span>
                     </div>
                   </div>
                 </div>
@@ -1244,7 +1244,7 @@ export default function Home() {
               <div className={`transition-all duration-200 ease-in-out ${openFaq === 3 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
                 <div className="px-6 pb-6 pt-2">
                   <p className="paragraph text-gray-600 ml-10">
-                    De onboarding is simpel en snel. We helpen je met het instellen van je bedrijfsgegevens, stem en doorschakeling. Alles wordt stap voor stap uitgelegd, zodat je AI-assistent perfect aansluit bij je bedrijf.
+                  Tijdens de onboarding blijven we nauw betrokken. We ontwikkelen de virtuele assistent volledig op basis van de voorkeuren van jouw bedrijf en helpen bij het instellen van de doorschakeling en andere functionaliteiten. Alles wordt stap voor stap uitgelegd, zodat je AI-assistent naadloos aansluit op jouw werkwijze.
                   </p>
                 </div>
               </div>
@@ -1291,7 +1291,7 @@ export default function Home() {
               <div className={`transition-all duration-200 ease-in-out ${openFaq === 5 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
                 <div className="px-6 pb-6 pt-2">
                   <p className="paragraph text-gray-600 ml-10">
-                    Onze virtuele assistenten regelen je gesprekken en afspraken 24/7, zodat jij je kunt focussen op je werk. Ze chatten met klanten, plannen afspraken, helpen met vragen en verzamelen contactgegevens. Gemiddeld bespaar je 20 uur aan belletjes per maand. Zo hou je tijd over voor belangrijkere zaken.
+                    Onze virtuele assistenten regelen je gesprekken en afspraken 24/7, zodat jij je kunt focussen op je werk. Ze chatten met klanten, plannen afspraken, helpen met vragen en verzamelen contactgegevens. De praktijk leert dat er gemiddeld 20 uur bespaart kan worden aan belletjes per maand. Zo hou je tijd over voor belangrijkere zaken. Daarnaast helpt Voicelabs actief bij het automatiseren van workflows binnen je bedrijf. 
                   </p>
                 </div>
               </div>
