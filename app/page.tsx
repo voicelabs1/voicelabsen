@@ -388,6 +388,27 @@ export default function Home() {
                     {/* First set of logos */}
                     <div className="flex shrink-0 items-center gap-16 mr-16">
                       <Image
+                        src="/partners/cartesia.svg"
+                        alt="Cartesia - AI-telefonie partner"
+                        width={120}
+                        height={40}
+                        className="grayscale hover:grayscale-0 transition-all object-contain"
+                      />
+                      <Image
+                        src="/partners/openai.svg"
+                        alt="OpenAI - AI-model partner"
+                        width={120}
+                        height={40}
+                        className="grayscale hover:grayscale-0 transition-all object-contain"
+                      />
+                      <Image
+                        src="/partners/livekit.svg"
+                        alt="LiveKit - Real-time communication partner"
+                        width={120}
+                        height={40}
+                        className="grayscale hover:grayscale-0 transition-all object-contain"
+                      />
+                      <Image
                         src="/partners/twilio.svg"
                         alt="Twilio - Communicatie platform partner"
                         width={120}
@@ -402,22 +423,8 @@ export default function Home() {
                         className="grayscale hover:grayscale-0 transition-all object-contain"
                       />
                       <Image
-                        src="/partners/openai.svg"
-                        alt="OpenAI - AI-model partner"
-                        width={120}
-                        height={40}
-                        className="grayscale hover:grayscale-0 transition-all object-contain"
-                      />
-                      <Image
                         src="/partners/claude.svg"
                         alt="Claude - AI-telefonie partner"
-                        width={120}
-                        height={40}
-                        className="grayscale hover:grayscale-0 transition-all object-contain"
-                      />
-                      <Image
-                        src="/partners/cartesia.svg"
-                        alt="Cartesia - AI-telefonie partner"
                         width={120}
                         height={40}
                         className="grayscale hover:grayscale-0 transition-all object-contain"
@@ -433,6 +440,27 @@ export default function Home() {
                     {/* Duplicate set for infinite scroll */}
                     <div className="flex shrink-0 items-center gap-16 mr-16">
                       <Image
+                        src="/partners/cartesia.svg"
+                        alt="Cartesia - AI-telefonie partner"
+                        width={120}
+                        height={40}
+                        className="grayscale hover:grayscale-0 transition-all object-contain"
+                      />
+                      <Image
+                        src="/partners/openai.svg"
+                        alt="OpenAI - AI-model partner"
+                        width={120}
+                        height={40}
+                        className="grayscale hover:grayscale-0 transition-all object-contain"
+                      />
+                      <Image
+                        src="/partners/livekit.svg"
+                        alt="LiveKit - Real-time communication partner"
+                        width={120}
+                        height={40}
+                        className="grayscale hover:grayscale-0 transition-all object-contain"
+                      />
+                      <Image
                         src="/partners/twilio.svg"
                         alt="Twilio - Communicatie platform partner"
                         width={120}
@@ -447,22 +475,8 @@ export default function Home() {
                         className="grayscale hover:grayscale-0 transition-all object-contain"
                       />
                       <Image
-                        src="/partners/openai.svg"
-                        alt="OpenAI - AI-model partner"
-                        width={120}
-                        height={40}
-                        className="grayscale hover:grayscale-0 transition-all object-contain"
-                      />
-                      <Image
                         src="/partners/claude.svg"
                         alt="Claude - AI-telefonie partner"
-                        width={120}
-                        height={40}
-                        className="grayscale hover:grayscale-0 transition-all object-contain"
-                      />
-                      <Image
-                        src="/partners/cartesia.svg"
-                        alt="Cartesia - AI-telefonie partner"
                         width={120}
                         height={40}
                         className="grayscale hover:grayscale-0 transition-all object-contain"
