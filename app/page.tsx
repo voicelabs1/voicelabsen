@@ -402,7 +402,7 @@ export default function Home() {
                         className="grayscale hover:grayscale-0 transition-all object-contain"
                       />
                       <Image
-                        src="/partners/livekit.svg"
+                        src="/partners/livekit.png"
                         alt="LiveKit - Real-time communication partner"
                         width={120}
                         height={40}
