@@ -168,7 +168,7 @@ export default function ConsultPage() {
                 </svg>
               </div>
               <h3>Direct aan de slag</h3>
-              <p className="text-gray-600">Akkoord? Na het gesprek gaan we meteen aan de slag voor je persoonlijke assistent en de nodige intergraties.</p>
+              <p className="text-gray-600">Akkoord? Na het gesprek gaan we meteen aan de slag voor je persoonlijke assistent en de nodige integraties.</p>
             </div>
           </div>
         </div>

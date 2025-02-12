@@ -416,8 +416,8 @@ export default function Home() {
                         className="grayscale hover:grayscale-0 transition-all object-contain"
                       />
                       <Image
-                        src="/partners/vapi.svg"
-                        alt="VAPI - AI-telefonie partner"
+                        src="/partners/vonage.png"
+                        alt="Vonage - Communication platform partner"
                         width={120}
                         height={40}
                         className="grayscale hover:grayscale-0 transition-all object-contain"
@@ -468,8 +468,8 @@ export default function Home() {
                         className="grayscale hover:grayscale-0 transition-all object-contain"
                       />
                       <Image
-                        src="/partners/vapi.svg"
-                        alt="VAPI - AI-telefonie partner"
+                        src="/partners/vonage.png"
+                        alt="Vonage - Communication platform partner"
                         width={120}
                         height={40}
                         className="grayscale hover:grayscale-0 transition-all object-contain"
