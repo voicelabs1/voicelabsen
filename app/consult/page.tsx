@@ -26,20 +26,6 @@ const fadeSlideIn = {
   }
 };
 
-const spinAnimation = {
-  '@keyframes spin': {
-    '0%': {
-      transform: 'rotate(0deg)'
-    },
-    '100%': {
-      transform: 'rotate(360deg)'
-    }
-  },
-  '.animate-spin-slow': {
-    animation: 'spin 10s linear infinite'
-  }
-};
-
 export default function ConsultPage() {
   useEffect(() => {
     // Initialize Cal.com
@@ -144,7 +130,7 @@ export default function ConsultPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="space-y-4 reveal">
-              <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center animate-spin-slow">
+              <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center">
                 <svg className="w-6 h-6 text-[#0063f2]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -153,7 +139,7 @@ export default function ConsultPage() {
               <p className="text-gray-600">Krijg direct inzicht in hoe AI-telefonie jouw specifieke situatie kan verbeteren.</p>
             </div>
             <div className="space-y-4 reveal">
-              <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center animate-spin-slow">
+              <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center">
                 <svg className="w-6 h-6 text-[#0063f2]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                 </svg>
@@ -162,7 +148,7 @@ export default function ConsultPage() {
               <p className="text-gray-600">Ontdek praktische toepassingen en krijg een duidelijk implementatieplan.</p>
             </div>
             <div className="space-y-4 reveal">
-              <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center animate-spin-slow">
+              <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center">
                 <svg className="w-6 h-6 text-[#0063f2]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
