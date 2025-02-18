@@ -43,7 +43,7 @@ Maar met zoveel opties, hoe kies je dan de beste voor je bedrijf? Daarbij komt h
 Het antwoord op deze vragen helpt je de juiste tool te kiezen die je klantenservice naar het volgende niveau zal tillen, en dat zonder de kosten van het inhuren van extra menselijke medewerkers. Dit is de betoverende kracht van AI: het stelt je in staat om meer te doen met minder, om meer klanten blij te maken, om meer bedrijfsgroei mogelijk te maken.
 ## Implementatie van AI Klantenservice in het MKB
 
-![Succesvolle implementatie van AI in MKB](/nieuws/mkb-eigenaar3.jpeg)
+![Succesvolle implementatie van AI in MKB](/nieuws/mkb-eigenaar3.jpg)
 
 Het daadwerkelijk uitvoeren van de overgang naar een AI-gedreven klantenservice kan een ontmoedigende taak lijken. Gelukkig, het kan worden opgesplitst in een reeks van beheersbare stappen die je kunt volgen om succes te behalen.
 
