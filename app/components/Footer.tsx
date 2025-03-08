@@ -27,26 +27,26 @@ const Footer = () => {
           </div>
           
           <div className="text-white/90 text-sm text-center sm:text-left">
-            <a href="mailto:contact@voicelabs.nl" className="hover:text-white transition-colors">
-              contact@voicelabs.nl
+            <a href="mailto:contact@voicelabs.agency" className="hover:text-white transition-colors">
+              contact@voicelabs.agency
             </a>
           </div>
 
           <nav className="flex flex-wrap justify-center sm:justify-end items-center gap-4 sm:gap-6">
-            <Link href="/algemene-voorwaarden" className="text-sm text-white/90 hover:text-white transition-colors">
-              Algemene voorwaarden
+            <Link href="/terms-and-conditions" className="text-sm text-white/90 hover:text-white transition-colors">
+              Terms and Conditions
             </Link>
-            <Link href="/privacy-beleid" className="text-sm text-white/90 hover:text-white transition-colors">
-              Privacy Beleid
+            <Link href="/privacy-policy" className="text-sm text-white/90 hover:text-white transition-colors">
+              Privacy Policy
             </Link>
-            <Link href="/ethische-kader" className="text-sm text-white/90 hover:text-white transition-colors">
-              Ethisch Kader
+            <Link href="/ethical-framework" className="text-sm text-white/90 hover:text-white transition-colors">
+              Ethical Framework
             </Link>
             <button 
               onClick={() => setIsSettingsOpen(true)}
               className="text-sm text-white/90 hover:text-white transition-colors"
             >
-              Cookies Instellingen
+              Cookie Settings
             </button>
           </nav>
         </div>

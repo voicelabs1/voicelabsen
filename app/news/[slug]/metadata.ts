@@ -56,16 +56,15 @@ async function getPost(slug: string): Promise<BlogPost> {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const post = await getPost(params.slug);
   const excerpt = post.excerpt || post.content.slice(0, 160) + '...';
-  const ogImage = post.coverImage || "/nieuws/implementatie.jpg";
+  const ogImage = post.coverImage || "/images/implementation.jpg";
   const wordCount = post.content.split(/\s+/).length;
   const readingTime = Math.ceil(wordCount / 200); // Assuming 200 words per minute reading speed
   
   // Combine default keywords with post tags
   const keywords = [
-    "AI telefonist",
     "AI receptionist",
-    "klantenservice automatisering",
-    "virtuele receptionist",
+    "customer service automation",
+    "virtual receptionist",
     "Voicelabs",
     ...(post.tags || [])
   ].join(", ");
@@ -102,7 +101,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
           alt: post.title,
         },
       ],
-      locale: 'nl_NL',
+      locale: 'en_US',
       siteName: 'Voicelabs Blog',
       tags: post.tags,
     },
@@ -115,7 +114,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       creator: '@voicelabs',
     },
     alternates: {
-      canonical: `https://voicelabs.nl/nieuws/${params.slug}`,
+      canonical: `https://voicelabs.agency/news/${params.slug}`,
     },
     other: {
       'article:published_time': post.date,
@@ -123,10 +122,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       'article:section': post.category || 'Blog',
       'article:tag': post.tags?.join(',') || '',
       'og:site_name': 'Voicelabs Blog',
-      'twitter:label1': 'Geschreven door',
+      'twitter:label1': 'Written by',
       'twitter:data1': post.author || 'Voicelabs',
-      'twitter:label2': 'Leestijd',
-      'twitter:data2': `${readingTime} minuten`,
+      'twitter:label2': 'Reading time',
+      'twitter:data2': `${readingTime} minutes`,
     },
   };
 }

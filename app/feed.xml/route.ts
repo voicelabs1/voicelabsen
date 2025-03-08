@@ -26,16 +26,16 @@ export async function GET() {
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Voicelabs Blog</title>
-    <link>https://voicelabs.nl</link>
+    <link>https://voicelabs.agency</link>
     <description>Nieuws en updates over AI-telefonie en klantenservice automatisering</description>
     <language>nl</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
-    <atom:link href="https://voicelabs.nl/feed.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://voicelabs.agency/feed.xml" rel="self" type="application/rss+xml"/>
     ${posts.map(post => `
       <item>
         <title><![CDATA[${post.title}]]></title>
-        <link>https://voicelabs.nl/nieuws/${post.slug}</link>
-        <guid>https://voicelabs.nl/nieuws/${post.slug}</guid>
+        <link>https://voicelabs.agency/news/${post.slug}</link>
+        <guid>https://voicelabs.agency/news/${post.slug}</guid>
         <pubDate>${new Date(post.date).toUTCString()}</pubDate>
         <description><![CDATA[${post.excerpt}]]></description>
       </item>

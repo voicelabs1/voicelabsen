@@ -1,5 +1,5 @@
 import { format } from 'date-fns';
-import { nl } from 'date-fns/locale';
+import { enUS } from 'date-fns/locale';
 import Link from 'next/link';
 import Image from 'next/image';
 import Header from '@/app/components/Header';
@@ -20,12 +20,12 @@ export const headers = {
 // Add metadata for better SEO
 export const metadata: Metadata = {
   title: 'Blog | Voicelabs',
-  description: 'Lees de nieuwste inzichten over AI-telefonie en klantenservice automatisering.',
+  description: 'Read the latest insights about AI telephony and customer service automation.',
   openGraph: {
     title: 'Blog | Voicelabs',
-    description: 'Lees de nieuwste inzichten over AI-telefonie en klantenservice automatisering.',
+    description: 'Read the latest insights about AI telephony and customer service automation.',
     type: 'website',
-    locale: 'nl_NL',
+    locale: 'en_US',
   },
 };
 
@@ -75,14 +75,14 @@ export default async function NewsPage() {
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="text-sm font-medium text-gray-500 tracking-wide mb-6">Nieuws</div>
+          <div className="text-sm font-medium text-gray-500 tracking-wide mb-6">News</div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
             <h1 className="text-[2.5rem] lg:text-[3.5rem] leading-[1.1] mb-6">
-              De nieuwste inzichten in <br className="hidden lg:block" />
-              <span className="text-[#0063f2]">AI-telefonie.</span>
+              Latest insights in <br className="hidden lg:block" />
+              <span className="text-[#0063f2]">AI telephony.</span>
             </h1>
             <p className="text-lg lg:text-xl text-gray-600 font-light mt-2 lg:mt-8">
-              Bedrijven kunnen tegenwoordig profiteren van geavanceerde spraakassistenten die natuurlijke, persoonlijke interacties met klanten mogelijk maken.
+              Companies can now benefit from advanced voice assistants that enable natural, personalized interactions with customers.
             </p>
           </div>
         </div>
@@ -95,12 +95,12 @@ export default async function NewsPage() {
             {posts.map((post, index) => (
               <Link 
                 key={post.slug}
-                href={`/nieuws/${post.slug}`}
+                href={`/news/${post.slug}`}
                 className="group block sm:flex items-start sm:items-center gap-4 lg:gap-8 hover:bg-gray-50 p-4 -mx-4 rounded-2xl transition-colors"
               >
                 <div className="relative w-full sm:w-[240px] aspect-[4/3] sm:h-[180px] rounded-xl overflow-hidden mb-4 sm:mb-0">
                   <Image
-                    src={post.coverImage || "/plaatjes/implementatie.jpg"}
+                    src={post.coverImage || "/images/implementation.jpg"}
                     alt={post.title}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 240px"
@@ -118,7 +118,7 @@ export default async function NewsPage() {
                     {post.excerpt}
                   </p>
                   <time className="text-sm text-gray-500" dateTime={post.date}>
-                    {format(new Date(post.date), 'MMMM d, yyyy', { locale: nl })}
+                    {format(new Date(post.date), 'MMMM d, yyyy', { locale: enUS })}
                   </time>
                 </div>
               </Link>

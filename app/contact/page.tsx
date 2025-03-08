@@ -88,8 +88,8 @@ export default function ContactPage() {
             <div className="grid grid-cols-1 gap-8 mb-16 animate-[fadeSlideIn_1.4s_ease-out]">
               <div>
                 <h3 className="text-lg font-medium mb-2">E-mail</h3>
-                <a href="mailto:contact@voicelabs.nl" className="text-[#0063f2] hover:opacity-80">
-                  contact@voicelabs.nl
+                <a href="mailto:contact@voicelabs.agency" className="text-[#0063f2] hover:opacity-80">
+                  contact@voicelabs.agency
                 </a>
               </div>
             </div>

@@ -24,10 +24,10 @@ const dmMono = DM_Mono({
 export const metadata: Metadata = {
   title: {
     template: '%s | Voicelabs',
-    default: 'Ondersteun je Bedrijf met AI-Telefonisten | 24/7 Klantenservice',
+    default: 'Support Your Business with AI Receptionists | 24/7 Customer Service',
   },
-  description: 'Voicelabs biedt virtuele asssistenten die je telefoongesprekken beantwoordt, routeert en afhandelt. Ontdek hoe onze AI-receptionist je klantenservice kan verbeteren.',
-  keywords: 'AI telefonist, AI receptionist, AI receptioniste, klantenservice automatisering, virtuele receptionist, telefonie automatisering',
+  description: 'Voicelabs offers virtual assistants that answer, route, and handle your phone calls. Discover how our AI receptionist can improve your customer service.',
+  keywords: 'AI receptionist, AI phone assistant, customer service automation, virtual receptionist, telephony automation',
   authors: [{ name: 'Voicelabs' }],
   publisher: 'Voicelabs',
   robots: {
@@ -43,30 +43,30 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    locale: 'nl_NL',
-    url: 'https://voicelabs.nl',
+    locale: 'en_US',
+    url: 'https://voicelabs.agency',
     siteName: 'Voicelabs',
-    title: 'Ondersteun je Bedrijf met AI-Telefonisten | 24/7 Klantenservice',
-    description: 'Voicelabs biedt een AI-telefonist die uw telefoongesprekken beantwoordt, routeert en afhandelt.',
+    title: 'Support Your Business with AI Receptionists | 24/7 Customer Service',
+    description: 'Voicelabs offers an AI receptionist that answers, routes, and handles your phone calls.',
     images: [
       {
-        url: '/plaatjes/optimalisatie.webp',
+        url: '/images/optimization.webp',
         width: 1200,
         height: 630,
-        alt: 'Voicelabs - AI Telefonist',
+        alt: 'Voicelabs - AI Receptionist',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ondersteun je Bedrijf met AI-Telefonisten | 24/7 Klantenservice',
-    description: 'Voicelabs biedt een AI-telefonist die uw telefoongesprekken beantwoordt, routeert en afhandelt.',
-    images: ['/plaatjes/optimalisatie.webp'],
+    title: 'Support Your Business with AI Receptionists | 24/7 Customer Service',
+    description: 'Voicelabs offers an AI receptionist that answers, routes, and handles your phone calls.',
+    images: ['/images/optimization.webp'],
   },
   alternates: {
-    canonical: 'https://voicelabs.nl',
+    canonical: 'https://voicelabs.agency',
   },
-  metadataBase: new URL('https://voicelabs.nl'),
+  metadataBase: new URL('https://voicelabs.agency'),
 };
 
 export default function RootLayout({
@@ -75,11 +75,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="nl" className={`${dmSans.variable} ${dmMono.variable}`}>
+    <html lang="en" className={`${dmSans.variable} ${dmMono.variable}`}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="alternate" type="application/rss+xml" title="Voicelabs Blog RSS Feed" href="/feed.xml" />
+        <link rel="alternate" hrefLang="en" href="https://voicelabs.agency" />
+        <link rel="alternate" hrefLang="nl" href="https://voicelabs.nl" />
+        <link rel="alternate" hrefLang="x-default" href="https://voicelabs.agency" />
         <meta name="theme-color" content="#0063f2" />
       </head>
       <body className={`${dmSans.className} antialiased`}>

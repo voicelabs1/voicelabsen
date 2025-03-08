@@ -1,5 +1,6 @@
 "use client";
 
+import React from 'react';
 import Image from "next/image";
 import Link from 'next/link';
 import Header from './components/Header';
@@ -67,12 +68,12 @@ export default function Home() {
 
   const prices = {
     basis: {
-      monthly: 395,
-      yearly: 349
+      monthly: 427,
+      yearly: 377
     },
     business: {
-      monthly: 995,
-      yearly: 895
+      monthly: 1075,
+      yearly: 967
     }
   };
 
@@ -162,9 +163,9 @@ export default function Home() {
           '@context': 'https://schema.org',
           '@type': 'Organization',
           name: 'Voicelabs',
-          url: 'https://voicelabs.nl',
-          logo: 'https://voicelabs.nl/plaatjes/logovoicelabs.svg',
-          description: 'Voicelabs levert AI-gestuurde telefonisten voor bedrijven, waarmee ze hun klantenservice kunnen automatiseren en optimaliseren.',
+          url: 'https://voicelabs.agency',
+          logo: 'https://voicelabs.agency/images/logovoicelabs.svg',
+          description: 'Voicelabs provides AI-powered receptionists for businesses, enabling them to automate and optimize their customer service.',
           address: {
             '@type': 'PostalAddress',
             addressLocality: 'Amsterdam',
@@ -174,7 +175,7 @@ export default function Home() {
             '@type': 'ContactPoint',
             telephone: '',
             contactType: 'customer service',
-            email: 'contact@voicelabs.nl'
+            email: 'contact@voicelabs.agency'
           }
         })}
       </Script>
@@ -184,8 +185,8 @@ export default function Home() {
         {JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'Product',
-          name: 'AI-Telefonist',
-          description: 'AI-gestuurde telefonist voor 24/7 professionele klantenservice',
+          name: 'AI Receptionist',
+          description: 'AI-powered receptionist for 24/7 professional customer service',
           brand: {
             '@type': 'Brand',
             name: 'Voicelabs'
@@ -209,26 +210,26 @@ export default function Home() {
           mainEntity: [
             {
               '@type': 'Question',
-              name: 'Wat is AI-telefonie?',
+              name: 'What is AI telephony?',
               acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'AI-telefonie gebruikt kunstmatige intelligentie om telefoongesprekken te beheren. Het zorgt ervoor dat je bedrijf 24/7 bereikbaar is, gesprekken professioneel worden afgehandeld en je klantenservice wordt geautomatiseerd.'
+                text: 'AI telephony uses artificial intelligence to manage phone calls. It ensures your business is available 24/7, handles conversations professionally, and automates your customer service.'
               }
             },
             {
               '@type': 'Question',
-              name: 'Wat is een AI-receptionist?',
+              name: 'What is an AI receptionist?',
               acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'AI receptionisten zijn slimme digitale assistenten die net als mensen praten en begrijpen wat klanten willen. Ze nemen routinetaken over zoals afspraken maken en bestellingen opnemen.'
+                text: 'AI receptionists are smart digital assistants that talk and understand customers just like humans. They take over routine tasks like scheduling appointments and taking orders.'
               }
             },
             {
               '@type': 'Question',
-              name: 'Hoe werkt de onboarding?',
+              name: 'How does onboarding work?',
               acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'De onboarding is simpel en snel - binnen een dag ben je live. We helpen je met het instellen van je bedrijfsgegevens, stem en doorschakeling.'
+                text: 'Onboarding is simple and fast - you can go live within a day. We help you set up your business details, voice configuration, and call routing.'
               }
             }
           ]
@@ -242,20 +243,20 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="text-sm font-medium text-gray-500 tracking-wide mb-6" role="doc-subtitle">
-                VOOR VOORUITSTREVENDE BEDRIJVEN
+                FOR FORWARD-THINKING BUSINESSES
               </div>
               <h1 className="mb-6 animate-fade-in [animation-duration:1.2s]">
-                Ondersteun je klantenservice met <span className="text-[#0063f2]">AI.</span>
+                Support your customer service with <span className="text-[#0063f2]">AI.</span>
               </h1>
               <p className="paragraph text-gray-600 mb-10">
-                Implementeer 24/7 professionele klantenservice binnen je bedrijf met onze AI-telefonisten. Bespaar tijd en kosten terwijl je je service naar een hoger niveau tilt.
+                Transform your customer service with our AI-powered receptionists. Available 24/7, handling calls professionally while reducing costs.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/consult"
                   className="bg-[#0063f2] text-white px-8 py-4 rounded-xl text-lg hover:bg-blue-600 transition-colors inline-flex items-center gap-2"
                 >
-                  Start nu
+                  Start Now
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
@@ -263,9 +264,9 @@ export default function Home() {
                 <button
                   onClick={() => document.getElementById('future')?.scrollIntoView({ behavior: 'smooth' })}
                   className="text-gray-600 hover:text-gray-900 px-6 py-4 text-[15px] font-medium transition-colors duration-300"
-                  aria-label="Lees hoe Voicelabs werkt"
+                  aria-label="Learn how Voicelabs works"
                 >
-                  Hoe werken wij?
+                  How do we work?
                 </button>
               </div>
             </div>
@@ -275,7 +276,7 @@ export default function Home() {
               <div className="relative w-[540px] h-[640px]">
                 <Image
                   src="/comps/hand.png"
-                  alt="Smartphone met de Voicelabs AI-telefonist interface"
+                  alt="Smartphone showing the Voicelabs AI receptionist interface"
                   fill
                   className="object-contain z-10 pointer-events-none"
                   priority
@@ -290,12 +291,12 @@ export default function Home() {
                 height: '500px'
               }}>
                 <div className="bg-white rounded-lg p-6 h-full">
-                  <h3 className="text-lg font-semibold mb-2 mt-4">Nieuwsgierig?</h3>
-                  <p className="text-sm text-gray-600 mb-6">Ontvang direct een telefoontje van onze AI-telefonist!</p>
-                  <form onSubmit={handleSubmit} className="space-y-4" aria-label="Contact formulier">
+                  <h3 className="text-lg font-semibold mb-2 mt-4">Curious?</h3>
+                  <p className="text-sm text-gray-600 mb-6">Get a call from our AI receptionist right away!</p>
+                  <form onSubmit={handleSubmit} className="space-y-4" aria-label="Contact form">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                        Naam
+                        Name
                       </label>
                       <input
                         type="text"
@@ -307,12 +308,12 @@ export default function Home() {
                         disabled={isSubmitting || submitSuccess}
                         aria-required="true"
                         className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-sm disabled:bg-gray-100 disabled:text-gray-500"
-                        placeholder="Naam"
+                        placeholder="Name"
                       />
                     </div>
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                        E-mailadres
+                        Email address
                       </label>
                       <input
                         type="email"
@@ -324,12 +325,12 @@ export default function Home() {
                         disabled={isSubmitting || submitSuccess}
                         aria-required="true"
                         className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-sm disabled:bg-gray-100 disabled:text-gray-500"
-                        placeholder="naam@email.nl"
+                        placeholder="name@email.com"
                       />
                     </div>
                     <div>
                       <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                        Telefoonnummer
+                        Phone number
                       </label>
                       <input
                         type="tel"
@@ -344,24 +345,24 @@ export default function Home() {
                         placeholder="+31612345678"
                       />
                       {phoneError && (
-                        <p className="mt-1 text-sm text-red-600">{phoneError}</p>
+                        <p className="mt-1 text-sm text-red-600">Phone number is incorrect. Use format: +31612345678</p>
                       )}
                     </div>
                     {submitError && (
-                      <p className="text-red-500 text-sm">{submitError}</p>
+                      <p className="text-red-500 text-sm">Something went wrong. Please try again later.</p>
                     )}
                     {submitSuccess ? (
                       <div className="text-emerald-600 text-sm font-medium p-3 bg-emerald-50 rounded-md">
-                        Onze virtuele assistent neemt contact op.
+                        Our virtual assistant will contact you shortly.
                       </div>
                     ) : (
                       <button
                         type="submit"
                         disabled={isSubmitting}
                         className="w-full bg-[#0063f2] text-white px-4 py-2 rounded-md text-sm font-medium hover:opacity-90 transition-opacity disabled:opacity-50"
-                        aria-label="Start direct gesprek met AI-telefonist"
+                        aria-label="Start conversation with AI receptionist"
                       >
-                        {isSubmitting ? 'Even geduld...' : 'Probeer het uit'}
+                        {isSubmitting ? 'Please wait...' : 'Try it out'}
                       </button>
                     )}
                   </form>
@@ -374,7 +375,7 @@ export default function Home() {
           <section className="relative w-full py-12 overflow-hidden reveal" aria-label="Technologie partners">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <h2 className="text-center mb-12 h3-small">
-                De geavanceerde technologie achter onze AI-receptionisten
+                The Advanced Technology Behind Our AI Receptionists
               </h2>
               
               <div className="relative mx-auto" style={{ width: "1000px" }}>
@@ -501,15 +502,15 @@ export default function Home() {
               {/* Left Column - Image */}
               <div className="relative reveal">
                 <Image
-                  src="/plaatjes/aireceptionist.webp"
-                  alt="AI Receptioniste in actie"
+                  src="/images/ai-receptionist.webp"
+                  alt="AI Receptionist in action"
                   width={600}
                   height={500}
                   className="rounded-2xl"
                 />
                 {/* Summary Card */}
                 <div className="absolute bottom-8 right-0 bg-white rounded-xl shadow-lg p-6 max-w-sm transform translate-x-12 animate-slide-in-right">
-                  <h4 className="text-lg font-medium text-gray-800 mb-4">Dagelijkse impact</h4>
+                  <h4 className="text-lg font-medium text-gray-800 mb-4">Daily Impact</h4>
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 bg-blue-50 rounded flex items-center justify-center">
@@ -517,7 +518,7 @@ export default function Home() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                       </div>
-                      <span className="text-sm text-gray-600">53 belminuten bespaard</span>
+                      <span className="text-sm text-gray-600">53 minutes of calls saved</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-5 h-5 bg-blue-50 rounded flex items-center justify-center">
@@ -525,7 +526,7 @@ export default function Home() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                         </svg>
                       </div>
-                      <span className="text-sm text-gray-600">9 nieuwe boekingen</span>
+                      <span className="text-sm text-gray-600">9 new bookings</span>
                     </div>
                   </div>
                 </div>
@@ -534,7 +535,7 @@ export default function Home() {
               {/* Right Column - Content */}
               <div className="reveal">
                 <h2 className="mb-8">
-                  Met onze <span className="text-[#0063f2]">AI-receptionisten</span> kun je je concentreren op wat echt belangrijk is.
+                  With our <span className="text-[#0063f2]">AI receptionists</span>, you can focus on what truly matters.
                 </h2>
 
                 <div className="space-y-12">
@@ -546,8 +547,8 @@ export default function Home() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="mb-2">24/7 Bereikbaar, zonder extra personeel</h3>
-                      <p className="paragraph text-gray-600">Maak van elk moment een kans. Onze AI-receptioniste staat dag en nacht klaar, beantwoordt direct elke vraag en tilt klanttevredenheid naar een hoger niveau.</p>
+                      <h3 className="mb-2">24/7 Availability, No Extra Staff</h3>
+                      <p className="paragraph text-gray-600">Make every moment count. Our AI receptionist is ready day and night, instantly answering every question and elevating customer satisfaction.</p>
                     </div>
                   </div>
 
@@ -559,8 +560,8 @@ export default function Home() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="mb-2">Minimaliseer dagelijkse ruis en frustratie</h3>
-                      <p className="paragraph text-gray-600">Wij vangen alle gesprekken op, elimineren onnodige onderbrekingen en stroomlijnen communicatie zodat jouw bedrijf ongehinderd kan groeien.</p>
+                      <h3 className="mb-2">Minimize Daily Disruptions and Frustration</h3>
+                      <p className="paragraph text-gray-600">We handle all calls, eliminate unnecessary interruptions, and streamline communication so your business can grow unhindered.</p>
                     </div>
                   </div>
 
@@ -572,8 +573,8 @@ export default function Home() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="mb-2">Geen gemist gesprek = meer omzet</h3>
-                      <p className="paragraph text-gray-600">Elke gemiste oproep is een gemiste kans. Vang elk potentieel contact, converteer elke lead en zie je boekingen direct groeien. Geen kans blijft onbenut.</p>
+                      <h3 className="mb-2">No Missed Calls = More Revenue</h3>
+                      <p className="paragraph text-gray-600">Every missed call is a missed opportunity. Capture every potential contact, convert every lead, and watch your bookings grow. No opportunity goes unused.</p>
                     </div>
                   </div>
 
@@ -585,8 +586,8 @@ export default function Home() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="mb-2">Naadloze integratie in de workflow van jouw bedrijf</h3>
-                      <p className="paragraph text-gray-600">Voicelabs verbindt moeiteloos met je belangrijkste tools. Gebruik je een minder bekend systeem? Geen zorgen - wij ontwikkelen een naadloze integratie op maat voor jouw specifieke bedrijfssoftware.</p>
+                      <h3 className="mb-2">Seamless Integration into Your Business Workflow</h3>
+                      <p className="paragraph text-gray-600">Voicelabs connects effortlessly with your essential tools. Using a less common system? No worries - we'll develop a seamless integration tailored to your specific business software.</p>
                     </div>
                   </div>
                 </div>
@@ -614,7 +615,7 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-x-16">
               <div className="lg:col-span-4 reveal">
                 <h2 className="text-center lg:text-left mb-8 lg:mb-0">
-                  Ervaar de<br />toekomst van<br />klantenservice.
+                  Experience the<br />future of<br />customer service.
                 </h2>
               </div>
               <div className="lg:col-span-8">
@@ -628,7 +629,7 @@ export default function Home() {
                           </svg>
                         </div>
                       </div>
-                      <span className="paragraph text-white">Het maken en beheren van afspraken en reserveringen. </span>
+                      <span className="paragraph text-white">Creating and managing appointments and reservations.</span>
                     </div>
 
                     <div className="flex items-start gap-4">
@@ -639,7 +640,7 @@ export default function Home() {
                           </svg>
                         </div>
                       </div>
-                      <span className="paragraph text-white">Het beantwoorden van de meest voorkomende vragen binnen het bedrijf.</span>
+                      <span className="paragraph text-white">Answering the most common questions within the company.</span>
                     </div>
 
                     <div className="flex items-start gap-4">
@@ -650,7 +651,7 @@ export default function Home() {
                           </svg>
                         </div>
                       </div>
-                      <span className="paragraph text-white">Het versturen van automatische bevestigingen via WhatsApp</span>
+                      <span className="paragraph text-white">Sending automatic confirmations via WhatsApp</span>
                     </div>
                   </div>
 
@@ -663,7 +664,7 @@ export default function Home() {
                           </svg>
                         </div>
                       </div>
-                      <span className="paragraph text-white">Altijd gemakkelijk doorschakelen naar een menselijke medewerker</span>
+                      <span className="paragraph text-white">Easy transfer to a human agent whenever needed</span>
                     </div>
 
                     <div className="flex items-start gap-4">
@@ -674,7 +675,7 @@ export default function Home() {
                           </svg>
                         </div>
                       </div>
-                      <span className="paragraph text-white">Realtime inzicht in gesprekken via onze app</span>
+                      <span className="paragraph text-white">Real-time conversation insights via our app</span>
                     </div>
 
                     <div className="flex items-start gap-4">
@@ -685,7 +686,7 @@ export default function Home() {
                           </svg>
                         </div>
                       </div>
-                      <span className="paragraph text-white">Slimme meldingen voor opvolging en acties</span>
+                      <span className="paragraph text-white">Smart notifications for follow-ups and actions</span>
                     </div>
                   </div>
                 </div>
@@ -698,9 +699,9 @@ export default function Home() {
       {/* Process Section */}
       <section className="py-24 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-center mb-4 reveal">Hoe het werkt</h2>
+          <h2 className="text-center mb-4 reveal">How it works</h2>
           <p className="paragraph text-gray-600 text-center mb-16 reveal">
-            Samenwerken met Voicelabs is eenvoudig. Met onze heldere aanpak wordt je binnen kort tijd ondersteund bij al je telefonie-taken.
+            Working with Voicelabs is straightforward. With our clear approach, you'll be supported in all your telephony tasks in no time.
           </p>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -715,7 +716,7 @@ export default function Home() {
                   }`}
                   onClick={() => setActiveStep(1)}
                 >
-                  1. Analyse
+                  1. Analysis
                 </button>
                 <button
                   className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
@@ -725,7 +726,7 @@ export default function Home() {
                   }`}
                   onClick={() => setActiveStep(2)}
                 >
-                  2. Implementatie
+                  2. Implementation
                 </button>
                 <button
                   className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
@@ -735,7 +736,7 @@ export default function Home() {
                   }`}
                   onClick={() => setActiveStep(3)}
                 >
-                  3. Optimalisatie
+                  3. Optimization
                 </button>
               </div>
 
@@ -753,9 +754,9 @@ export default function Home() {
               <div className="min-h-[400px] relative">
                 {activeStep === 1 && (
                   <div className="animate-fadeSlideIn absolute inset-0 transition-all duration-500 ease-in-out">
-                    <h3 className="mb-4">Diepgaande analyse</h3>
+                    <h3 className="mb-4">In-depth Analysis</h3>
                     <p className="paragraph text-gray-600">
-                      We starten met een grondige analyse van uw bedrijf, processen en klantbehoeften. Ons team werkt nauw samen om de specifieke eisen en doelen van je bedrijf te begrijpen.
+                      We start with a thorough analysis of your business, processes, and customer needs. Our team works closely to understand your company's specific requirements and goals.
                     </p>
                     <ul className="mt-4 space-y-4">
                       <li className="paragraph text-gray-600 flex items-start gap-3">
@@ -764,7 +765,7 @@ export default function Home() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                           </svg>
                         </div>
-                        <span className="flex-1">De huidige CRM systemen die je bedrijf gebruikt</span>
+                        <span className="flex-1">The current CRM systems your business uses</span>
                       </li>
                       <li className="paragraph text-gray-600 flex items-start gap-3">
                         <div className="w-6 h-6 mt-1 flex-shrink-0 rounded-full bg-[#0063f2]/10 flex items-center justify-center">
@@ -772,7 +773,7 @@ export default function Home() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
                           </svg>
                         </div>
-                        <span className="flex-1">De gesprekken die je wilt automatiseren</span>
+                        <span className="flex-1">The conversations you want to automate</span>
                       </li>
                       <li className="paragraph text-gray-600 flex items-start gap-3">
                         <div className="w-6 h-6 mt-1 flex-shrink-0 rounded-full bg-[#0063f2]/10 flex items-center justify-center">
@@ -780,16 +781,16 @@ export default function Home() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
                         </div>
-                        <span className="flex-1">Specifieke wensen zoals meertaligheid of integraties met bestaande systemen</span>
+                        <span className="flex-1">Specific requirements such as multilingual support or integrations with existing systems</span>
                       </li>
                     </ul>
                   </div>
                 )}
                 {activeStep === 2 && (
                   <div className="animate-fadeSlideIn absolute inset-0 transition-all duration-500 ease-in-out">
-                    <h3 className="mb-4">Implementatie en Integratie</h3>
+                    <h3 className="mb-4">Implementation and Integration</h3>
                     <p className="paragraph text-gray-600">
-                      Zodra het maatwerkontwerp is goedgekeurd, gaan we aan de slag met de implementatie. Onze experts zorgen voor een probleemloze integratie met je huidige systemen, zoals CRM's, agenda's of andere tools.
+                      Once the custom design is approved, we proceed with implementation. Our experts ensure seamless integration with your current systems, such as CRMs, calendars, or other tools.
                     </p>
                     <ul className="mt-4 space-y-4">
                       <li className="paragraph text-gray-600 flex items-start gap-3">
@@ -798,7 +799,7 @@ export default function Home() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                           </svg>
                         </div>
-                        <span className="flex-1">Je workflows te ondersteunen</span>
+                        <span className="flex-1">Support your workflows</span>
                       </li>
                       <li className="paragraph text-gray-600 flex items-start gap-3">
                         <div className="w-6 h-6 mt-1 flex-shrink-0 rounded-full bg-[#0063f2]/10 flex items-center justify-center">
@@ -806,7 +807,7 @@ export default function Home() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                           </svg>
                         </div>
-                        <span className="flex-1">Direct operationeel te zijn</span>
+                        <span className="flex-1">Be operational immediately</span>
                       </li>
                       <li className="paragraph text-gray-600 flex items-start gap-3">
                         <div className="w-6 h-6 mt-1 flex-shrink-0 rounded-full bg-[#0063f2]/10 flex items-center justify-center">
@@ -814,16 +815,16 @@ export default function Home() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                           </svg>
                         </div>
-                        <span className="flex-1">Afspraken, leads of klantverzoeken te beheren volgens je specifieke wensen</span>
+                        <span className="flex-1">Manage appointments, leads, or customer requests according to your specific needs</span>
                       </li>
                     </ul>
                   </div>
                 )}
                 {activeStep === 3 && (
                   <div className="animate-fadeSlideIn absolute inset-0 transition-all duration-500 ease-in-out">
-                    <h3 className="mb-4">Optimalisatie en ondersteuning</h3>
+                    <h3 className="mb-4">Optimization and Support</h3>
                     <p className="paragraph text-gray-600">
-                      Na de lancering monitoren we de prestaties van je AI-telefonist zorgvuldig. Aan de hand van feedback van klanten en gebruikersdata blijven we optimaliseren om de efficiëntie en klanttevredenheid te verbeteren. Daarnaast bieden we doorlopende ondersteuning.
+                      After launch, we carefully monitor your AI receptionist's performance. Based on customer feedback and user data, we continue to optimize to improve efficiency and customer satisfaction. Additionally, we provide ongoing support.
                     </p>
                   </div>
                 )}
@@ -833,9 +834,9 @@ export default function Home() {
             {/* Step Image */}
             <div className="relative aspect-[4/3] w-full reveal">
               <Image
-                src={activeStep === 1 ? "/plaatjes/analyse.webp" : 
-                     activeStep === 2 ? "/plaatjes/implementatie.jpg" : 
-                     "/plaatjes/optimalisatie.webp"}
+                src={activeStep === 1 ? "/images/analysis.webp" : 
+                     activeStep === 2 ? "/images/implementation.jpg" : 
+                     "/images/optimization.webp"}
                 alt={`Process step ${activeStep}`}
                 fill
                 className="rounded-2xl shadow-xl object-cover transition-all duration-500"
@@ -848,14 +849,14 @@ export default function Home() {
       {/* Pricing Section */}
       <section id="pricing" className="py-24 relative overflow-hidden bg-white">
         <div className="max-w-7xl mx-auto px-4 relative">
-          <h2 className="text-center mb-4 text-black reveal">Kies het pakket dat bij je bedrijf past</h2>
-          <p className="paragraph text-black text-center mb-16 reveal">Selecteer uit onze best passende plannen. Andere wensen?<br />We maken graag een plan op maat!</p>
+          <h2 className="text-center mb-4 text-black reveal">Choose the package that fits your business</h2>
+          <p className="paragraph text-black text-center mb-16 reveal">Select from our best-fitting plans. Different needs?<br />We'll gladly create a custom plan!</p>
 
           {/* Pricing Toggle */}
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-16" role="group" aria-label="Betalingsperiode selectie">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-16" role="group" aria-label="Payment period selection">
             <div className="flex items-center gap-4">
               <span className={`text-sm sm:text-base whitespace-nowrap ${!isYearly ? 'text-black' : 'text-gray-500'}`}>
-                Maandelijks betalen
+                Pay Monthly
               </span>
               <button 
                 onClick={() => setIsYearly(!isYearly)}
@@ -864,18 +865,18 @@ export default function Home() {
                 }`}
                 role="switch"
                 aria-checked={isYearly}
-                aria-label="Schakel tussen maandelijks en jaarlijks betalen"
+                aria-label="Toggle between monthly and yearly payment"
               >
                 <div className={`w-4 h-4 bg-white rounded-full absolute top-1 transition-all duration-200 ${
                   isYearly ? 'left-7' : 'left-1'
                 }`}></div>
               </button>
               <span className={`text-sm sm:text-base whitespace-nowrap ${isYearly ? 'text-black' : 'text-gray-500'}`}>
-                Betaal per jaar
+                Pay Yearly
               </span>
             </div>
             <span className="text-sm text-emerald-600 font-medium whitespace-nowrap">
-              (Bespaar 15%)
+              (Save 15%)
             </span>
           </div>
 
@@ -897,29 +898,29 @@ export default function Home() {
                     <path d="m16,16C24.82,16,32,8.82,32,0h-9c0,3.86-3.14,7-7,7S9,3.86,9,0H0C0,8.82,7.18,16,16,16Z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-semibold mb-4">Basis</h3>
-                <div className="flex items-baseline gap-1 mb-6" aria-label="Prijs informatie">
-                  <span className="text-4xl font-semibold">€{isYearly ? prices.basis.yearly : prices.basis.monthly}</span>
-                  <span className="text-gray-600">/maand</span>
+                <h3 className="text-2xl font-semibold mb-4">Basic</h3>
+                <div className="flex items-baseline gap-1 mb-6" aria-label="Price information">
+                  <span className="text-4xl font-semibold">${isYearly ? prices.basis.yearly : prices.basis.monthly}</span>
+                  <span className="text-gray-600">/month</span>
                 </div>
-                <p className="text-gray-600 mb-6">Start eenvoudig met AI-telefonie en verbeter direct je bereikbaarheid.</p>
+                <p className="text-gray-600 mb-6">Start with a custom-built AI receptionist tailored to your business needs. We'll configure everything specifically for you.</p>
                 <Link 
                   href="/consult" 
                   className="block text-center bg-[#0063f2] text-white py-3 px-6 rounded-lg hover:opacity-90 transition-colors mb-8 inline-flex items-center justify-center gap-2 w-full"
                 >
-                  Direct aanvragen
+                  Request Now
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>
-                <ul className="space-y-3" aria-label="Basis pakket features">
+                <ul className="space-y-3" aria-label="Basic package features">
                   <li className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5" aria-hidden="true">
                       <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-gray-600 flex-1 text-[15px] leading-snug">Kan 5 gesprekken tegelijk behandelen</span>
+                    <span className="text-gray-600 flex-1 text-[15px] leading-snug">Can handle 5 simultaneous conversations</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5" aria-hidden="true">
@@ -927,7 +928,7 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-gray-600 flex-1 text-[15px] leading-snug">Inbound gesprekken – De AI kan inbound gesprekken overnemen en doorzetten</span>
+                    <span className="text-gray-600 flex-1 text-[15px] leading-snug">Inbound calls – AI can handle and transfer incoming calls</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5" aria-hidden="true">
@@ -935,7 +936,7 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-gray-600 flex-1 text-[15px] leading-snug">1000 belminuten, onbeperkte oproepen</span>
+                    <span className="text-gray-600 flex-1 text-[15px] leading-snug">1000 call minutes, unlimited calls</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5" aria-hidden="true">
@@ -943,7 +944,7 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-gray-600 flex-1 text-[15px] leading-snug">Directe koppeling met populaire tools (bijv. HubSpot, Salesforce, Cal etc)</span>
+                    <span className="text-gray-600 flex-1 text-[15px] leading-snug">Direct integration with popular tools (e.g., HubSpot, Salesforce, Cal etc)</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5" aria-hidden="true">
@@ -951,7 +952,7 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-gray-600 flex-1 text-[15px] leading-snug">Transcripties per e-mail – alles overzichtelijk je inbox.</span>
+                    <span className="text-gray-600 flex-1 text-[15px] leading-snug">Email transcripts – everything organized in your inbox</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5" aria-hidden="true">
@@ -959,7 +960,7 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-gray-600 flex-1 text-[15px] leading-snug">Geen technische kennis nodig – wij regelen en optimaliseren alles</span>
+                    <span className="text-gray-600 flex-1 text-[15px] leading-snug">No technical knowledge required – we handle and optimize everything</span>
                   </li>
                 </ul>
               </div>
@@ -996,15 +997,15 @@ export default function Home() {
                   </div>
                   <h3 className="text-2xl font-semibold mb-4 text-white">Business</h3>
                   <div className="flex items-baseline gap-1 mb-6">
-                    <span className="text-4xl font-semibold text-white">€{isYearly ? prices.business.yearly : prices.business.monthly}</span>
-                    <span className="text-white/90">/maand</span>
+                    <span className="text-4xl font-semibold text-white">${isYearly ? prices.business.yearly : prices.business.monthly}</span>
+                    <span className="text-white/90">/month</span>
                   </div>
-                  <p className="text-white/90 mb-6">Automatiseer en schaal je klantenservice én sales met een krachtige AI-oplossing.</p>
+                  <p className="text-white/90 mb-6">Advanced custom solution with full process automation. We'll build and integrate an AI system perfectly matched to your workflow.</p>
                   <Link
                     href="/consult"
                     className="bg-white text-[#0063f2] px-6 py-3 rounded-xl hover:bg-gray-100 transition-colors inline-flex items-center justify-center gap-2 w-full mb-8"
                   >
-                    Start nu
+                    Start Now
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
@@ -1016,7 +1017,7 @@ export default function Home() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
-                      <span className="text-white/90 flex-1 text-[15px] leading-snug">Kan 10 gesprekken tegelijk behandelen</span>
+                      <span className="text-white/90 flex-1 text-[15px] leading-snug">Can handle 10 simultaneous conversations</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5">
@@ -1024,7 +1025,7 @@ export default function Home() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
-                      <span className="text-white/90 flex-1 text-[15px] leading-snug">Inbound en outbound gesprekken</span>
+                      <span className="text-white/90 flex-1 text-[15px] leading-snug">Inbound and outbound calls</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5">
@@ -1032,7 +1033,7 @@ export default function Home() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
-                      <span className="text-white/90 flex-1 text-[15px] leading-snug">2000 belminuten, onbeperkte oproepen</span>
+                      <span className="text-white/90 flex-1 text-[15px] leading-snug">2000 call minutes, unlimited calls</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5">
@@ -1040,7 +1041,7 @@ export default function Home() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
-                      <span className="text-white/90 flex-1 text-[15px] leading-snug">Geavanceerde CRM-integratie – volledige automatisatie van klantgegevens</span>
+                      <span className="text-white/90 flex-1 text-[15px] leading-snug">Advanced CRM integration – complete automation of customer data</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5">
@@ -1048,7 +1049,7 @@ export default function Home() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
-                      <span className="text-white/90 flex-1 text-[15px] leading-snug">Meerdere telefoonnummers koppelen – ideaal voor grote teams of vestigingen.</span>
+                      <span className="text-white/90 flex-1 text-[15px] leading-snug">Connect multiple phone numbers – ideal for large teams or locations</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5">
@@ -1056,7 +1057,7 @@ export default function Home() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
-                      <span className="text-white/90 flex-1 text-[15px] leading-snug">Follow-up workflows: e-mail, Whatsapp, SMS</span>
+                      <span className="text-white/90 flex-1 text-[15px] leading-snug">Follow-up workflows: email, WhatsApp, SMS</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5">
@@ -1064,7 +1065,7 @@ export default function Home() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
-                      <span className="text-white/90 flex-1 text-[15px] leading-snug">Altijd inzicht met een realtime dashboard en uitgebreide rapporten</span>
+                      <span className="text-white/90 flex-1 text-[15px] leading-snug">Always informed with a real-time dashboard and comprehensive reports</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5">
@@ -1072,7 +1073,7 @@ export default function Home() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
-                      <span className="text-white/90 flex-1 text-[15px] leading-snug">Geen technische kennis nodig – wij regelen en optimaliseren alles</span>
+                      <span className="text-white/90 flex-1 text-[15px] leading-snug">No technical knowledge required – we handle and optimize everything</span>
                     </li>
                   </ul>
                 </div>
@@ -1098,14 +1099,14 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-semibold mb-4">Enterprise</h3>
                 <div className="flex items-baseline gap-1 mb-6">
-                  <span className="text-4xl font-semibold">Op aanvraag</span>
+                  <span className="text-4xl font-semibold">On Request</span>
                 </div>
-                <p className="text-gray-600 mb-6">Volledig op maat gemaakte automatiseringen voor je bedrijfsprocessen.</p>
+                <p className="text-gray-600 mb-6">Completely bespoke AI solution built from the ground up. Full customization of every aspect to match your enterprise needs.</p>
                 <Link
                   href="/consult"
                   className="block text-center bg-[#0063f2] text-white py-3 px-6 rounded-lg hover:opacity-90 transition-colors mb-8 inline-flex items-center justify-center gap-2 w-full"
                 >
-                  Wordt partner
+                  Become a Partner
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
@@ -1117,7 +1118,7 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-gray-600 flex-1 text-[15px] leading-snug">Alles van het Business-pakket</span>
+                    <span className="text-gray-600 flex-1 text-[15px] leading-snug">Everything from the Business package</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5">
@@ -1125,7 +1126,7 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-gray-600 flex-1 text-[15px] leading-snug">Meerdere telefoonnummers koppelen – ideaal voor grote teams of vestigingen.</span>
+                    <span className="text-gray-600 flex-1 text-[15px] leading-snug">Connect multiple phone numbers – ideal for large teams or locations</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5">
@@ -1133,7 +1134,7 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-gray-600 flex-1 text-[15px] leading-snug">Geavanceerde workflows – volledig afgestemd op je specifieke bedrijfsprocessen.</span>
+                    <span className="text-gray-600 flex-1 text-[15px] leading-snug">Advanced workflows – fully tailored to your specific business processes</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5">
@@ -1141,7 +1142,7 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-gray-600 flex-1 text-[15px] leading-snug">Strategische consultancy – onze AI-experts helpen u processen te optimaliseren en te automatiseren.</span>
+                    <span className="text-gray-600 flex-1 text-[15px] leading-snug">Strategic consultancy – our AI experts help you optimize and automate processes</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-emerald-500 flex-shrink-0 flex items-center justify-center mt-0.5">
@@ -1149,7 +1150,7 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-gray-600 flex-1 text-[15px] leading-snug">En nog veel meer..</span>
+                    <span className="text-gray-600 flex-1 text-[15px] leading-snug">And much more..</span>
                   </li>
                 </ul>
               </div>
@@ -1161,11 +1162,11 @@ export default function Home() {
       {/* FAQ Section */}
       <section className="py-24 px-4 bg-gradient-to-b from-white to-[#dfe3e9]/15">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-center mb-4 reveal">Veelgestelde vragen</h2>
+          <h2 className="text-center mb-4 reveal">Frequently Asked Questions</h2>
           <p className="paragraph text-gray-600 text-center mb-12 reveal">
-            Dit zijn de meest gestelde vragen over onze AI-receptionisten.
+            These are the most common questions about our AI receptionists.
             <br />
-            Andere vragen? <Link href="/contact" className="text-[#0063f2] hover:opacity-80">Neem contact op met ons team!</Link>
+            Other questions? <Link href="/contact" className="text-[#0063f2] hover:opacity-80">Contact our team!</Link>
           </p>
 
           {/* FAQ Items */}
@@ -1182,13 +1183,13 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                     </svg>
                   </span>
-                  <span className="h3-small text-gray-900">Wat is AI-telefonie?</span>
+                  <span className="h3-small text-gray-900">What is AI telephony?</span>
                 </div>
               </button>
               <div className={`transition-all duration-200 ease-in-out ${openFaq === 0 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
                 <div className="px-6 pb-6 pt-2">
                   <p className="paragraph text-gray-600 ml-10">
-                    AI-telefonie gebruikt kunstmatige intelligentie om telefoongesprekken te beheren. Het zorgt ervoor dat je bedrijf 24/7 bereikbaar is, gesprekken professioneel worden afgehandeld en je klantenservice wordt geautomatiseerd. De AI begrijpt natuurlijke taal, kan normale gesprekken voeren en regelt praktische zaken zoals afspraken inplannen of informatie geven.
+                    AI telephony uses artificial intelligence to manage phone calls. It ensures your business is available 24/7, handles conversations professionally, and automates your customer service. The AI understands natural language, can conduct normal conversations, and handles practical matters like scheduling appointments or providing information.
                   </p>
                 </div>
               </div>
@@ -1205,13 +1206,13 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                     </svg>
                   </span>
-                  <span className="h3-small text-gray-900">Wat is een AI-receptionist?</span>
+                  <span className="h3-small text-gray-900">What is an AI receptionist?</span>
                 </div>
               </button>
               <div className={`transition-all duration-200 ease-in-out ${openFaq === 1 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
                 <div className="px-6 pb-6 pt-2">
                   <p className="paragraph text-gray-600 ml-10">
-                    AI receptionisten zijn slimme digitale assistenten die net als mensen praten en begrijpen wat klanten willen. Ze nemen routinetaken over zoals afspraken maken en bestellingen opnemen. Zo bespaar je tijd en geld, en heb je minder stress over gemiste telefoontjes.
+                    AI receptionists are smart digital assistants that talk and understand customers just like humans. They take over routine tasks like scheduling appointments and taking orders. This saves you time and money, and reduces stress about missed calls.
                   </p>
                 </div>
               </div>
@@ -1228,13 +1229,13 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                     </svg>
                   </span>
-                  <span className="h3-small text-gray-900">Wat is Conversational AI?</span>
+                  <span className="h3-small text-gray-900">What is Conversational AI?</span>
                 </div>
               </button>
               <div className={`transition-all duration-200 ease-in-out ${openFaq === 2 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
                 <div className="px-6 pb-6 pt-2">
                   <p className="paragraph text-gray-600 ml-10">
-                    Conversational AI maakt het mogelijk dat computers normaal met mensen kunnen praten. Het is geen simpele 'ja/nee' computer meer, maar een systeem dat echt begrijpt wat je zegt en bedoelt. Dit zorgt voor natuurlijke gesprekken, of je nu chat of belt.
+                    Conversational AI enables computers to have natural conversations with people. It's not just a simple 'yes/no' computer anymore, but a system that truly understands what you say and mean. This ensures natural conversations, whether you're chatting or calling.
                   </p>
                 </div>
               </div>
@@ -1252,13 +1253,13 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                     </svg>
                   </span>
-                  <span className="h3-small text-gray-900">Hoe werkt de onboarding?</span>
+                  <span className="h3-small text-gray-900">How does onboarding work?</span>
                 </div>
               </button>
               <div className={`transition-all duration-200 ease-in-out ${openFaq === 3 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
                 <div className="px-6 pb-6 pt-2">
                   <p className="paragraph text-gray-600 ml-10">
-                  Tijdens de onboarding blijven we nauw betrokken. We ontwikkelen de virtuele assistent volledig op basis van de voorkeuren van jouw bedrijf en helpen bij het instellen van de doorschakeling en andere functionaliteiten. Alles wordt stap voor stap uitgelegd, zodat je AI-assistent naadloos aansluit op jouw werkwijze.
+                    During onboarding, we stay closely involved. We develop the virtual assistant entirely based on your company's preferences and help set up call forwarding and other functionalities. Everything is explained step by step, ensuring your AI assistant seamlessly aligns with your way of working.
                   </p>
                 </div>
               </div>
@@ -1275,13 +1276,13 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                     </svg>
                   </span>
-                  <span className="h3-small text-gray-900">Werkt Voicelabs met mijn telefoonsysteem?</span>
+                  <span className="h3-small text-gray-900">Does Voicelabs work with my phone system?</span>
                 </div>
               </button>
               <div className={`transition-all duration-200 ease-in-out ${openFaq === 4 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
                 <div className="px-6 pb-6 pt-2">
                   <p className="paragraph text-gray-600 ml-10">
-                    Voicelabs werkt met alle zakelijke telefoons, zowel mobiel als vast. Het instellen kan gemakkelijk in een paar stappen zodat de virtuele assistent overflowgesprekken kan beantwoorden of klanten kan doorverbinden. We lopen samen het hele proces door, zodat je precies weet hoe het werkt.
+                    Voicelabs works with all business phones, both mobile and landline. Setup can be done easily in a few steps so the virtual assistant can answer overflow calls or transfer customers. We'll walk through the entire process together, so you know exactly how it works.
                   </p>
                 </div>
               </div>
@@ -1299,13 +1300,13 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                     </svg>
                   </span>
-                  <span className="h3-small text-gray-900">Hoe helpt Voicelabs bij bedrijfsgroei en efficiëntie?</span>
+                  <span className="h3-small text-gray-900">How does Voicelabs help with business growth and efficiency?</span>
                 </div>
               </button>
               <div className={`transition-all duration-200 ease-in-out ${openFaq === 5 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
                 <div className="px-6 pb-6 pt-2">
                   <p className="paragraph text-gray-600 ml-10">
-                    Onze virtuele assistenten regelen je gesprekken en afspraken 24/7, zodat jij je kunt focussen op je werk. Ze chatten met klanten, plannen afspraken, helpen met vragen en verzamelen contactgegevens. De praktijk leert dat er gemiddeld 20 uur bespaart kan worden aan belletjes per maand. Zo hou je tijd over voor belangrijkere zaken. Daarnaast helpt Voicelabs actief bij het automatiseren van workflows binnen je bedrijf. 
+                    Our virtual assistants handle your calls and appointments 24/7, so you can focus on your work. They chat with customers, schedule appointments, help with questions, and collect contact information. Experience shows that an average of 20 hours can be saved on calls per month. This leaves you time for more important matters. Additionally, Voicelabs actively helps automate workflows within your business.
                   </p>
                 </div>
               </div>
@@ -1323,17 +1324,17 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                     </svg>
                   </span>
-                  <span className="h3-small text-gray-900">Hoe voldoet Voicelabs aan de AVG en waarborgt het de privacy van gegevens?</span>
+                  <span className="h3-small text-gray-900">How does Voicelabs comply with GDPR and ensure data privacy?</span>
                 </div>
               </button>
               <div className={`transition-all duration-200 ease-in-out ${openFaq === 6 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
                 <div className="px-6 pb-6 pt-2">
                   <p className="paragraph text-gray-600 ml-10">
-                    We nemen privacy serieus en volgen alle AVG-regels. Je data is veilig bij ons door sterke versleuteling en beveiligde opslag.
+                    We take privacy seriously and follow all GDPR rules. Your data is safe with us through strong encryption and secure storage.
                     <br /><br />
-                    Willen je klanten liever met een mens praten? We kunnen gesprekken direct doorverbinden of een terugbelverzoek regelen.
+                    Do your customers prefer to talk to a human? We can transfer calls directly or arrange a callback request.
                     <br /><br />
-                    We zijn open over het gebruik van AI - onze assistenten zeggen altijd eerlijk dat ze AI zijn. Check onze <Link href="/privacy-beleid" className="text-[#0063f2] hover:opacity-80">Privacyverklaring</Link> en Ethisch Kader voor meer details.
+                    We're transparent about AI use - our assistants always honestly identify themselves as AI. Check our <Link href="/privacy-policy" className="text-[#0063f2] hover:opacity-80">Privacy Policy</Link> and Ethical Framework for more details.
                   </p>
                 </div>
               </div>

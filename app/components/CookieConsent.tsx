@@ -51,30 +51,30 @@ const CookieConsent = () => {
     <>
       <div className="fixed bottom-8 right-8 max-w-md bg-white rounded-2xl shadow-xl p-8 z-50 animate-fade-in">
         <h3 className="text-[1.375rem] leading-[1.75rem] font-medium text-gray-900 mb-4">
-          We waarderen je privacy
+          We value your privacy
         </h3>
         <p className="text-gray-600 text-base mb-6">
-          We gebruiken cookies om je browse-ervaring te verbeteren, gepersonaliseerde advertenties of content te tonen en ons verkeer te analyseren. Door op "Alles accepteren" te klikken, stem je in met ons gebruik van cookies.
+          We use cookies to enhance your browsing experience, display personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.
         </p>
         <div className="flex flex-col gap-3">
           <button
             onClick={handleAccept}
             className="w-full px-6 py-3 rounded-xl bg-[#0063f2] text-white hover:bg-[#004dbd] transition-colors"
           >
-            Alles accepteren
+            Accept All
           </button>
           <div className="flex gap-3">
             <button
               onClick={handleReject}
               className="flex-1 px-6 py-3 rounded-xl border-2 border-gray-200 text-gray-900 hover:bg-gray-50 transition-colors"
             >
-              Alles weigeren
+              Reject All
             </button>
             <button
               onClick={handleCustomize}
               className="flex-1 px-6 py-3 rounded-xl border-2 border-gray-200 text-gray-900 hover:bg-gray-50 transition-colors"
             >
-              Aanpassen
+              Customize
             </button>
           </div>
         </div>

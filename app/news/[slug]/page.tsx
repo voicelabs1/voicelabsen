@@ -1,7 +1,7 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import Image from 'next/image';
 import { format } from 'date-fns';
-import { nl } from 'date-fns/locale';
+import { enUS } from 'date-fns/locale';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import Script from 'next/script';
@@ -53,7 +53,7 @@ const components = {
 
 export default async function BlogPost({ params }: PageProps) {
   const post = await getPost(params.slug);
-  const formattedDate = format(new Date(post.date), 'MMMM d, yyyy', { locale: nl });
+  const formattedDate = format(new Date(post.date), 'MMMM d, yyyy', { locale: enUS });
   const wordCount = post.content.split(/\s+/).length;
   const readingTime = Math.ceil(wordCount / 200); // Assuming 200 words per minute reading speed
 
@@ -67,16 +67,16 @@ export default async function BlogPost({ params }: PageProps) {
           '@context': 'https://schema.org',
           '@type': 'Article',
           headline: post.title,
-          image: [post.coverImage || "/nieuws/implementatie.jpg"],
+          image: [post.coverImage || "/images/implementation.jpg"],
           datePublished: post.date,
           dateModified: post.date,
           author: [{
             '@type': 'Organization',
             name: 'Voicelabs',
-            url: 'https://voicelabs.nl',
+            url: 'https://voicelabs.agency',
             logo: {
               '@type': 'ImageObject',
-              url: 'https://voicelabs.nl/plaatjes/logovoicelabs.svg'
+              url: 'https://voicelabs.agency/images/logovoicelabs.svg'
             }
           }],
           publisher: {
@@ -84,7 +84,7 @@ export default async function BlogPost({ params }: PageProps) {
             name: 'Voicelabs',
             logo: {
               '@type': 'ImageObject',
-              url: 'https://voicelabs.nl/plaatjes/logovoicelabs.svg'
+              url: 'https://voicelabs.agency/images/logovoicelabs.svg'
             }
           },
           description: post.excerpt || post.content.slice(0, 160) + '...',
@@ -93,19 +93,18 @@ export default async function BlogPost({ params }: PageProps) {
           timeRequired: `PT${readingTime}M`,
           mainEntityOfPage: {
             '@type': 'WebPage',
-            '@id': `https://voicelabs.nl/nieuws/${params.slug}`
+            '@id': `https://voicelabs.agency/news/${params.slug}`
           },
           keywords: [
-            'AI telefonist',
             'AI receptionist',
-            'klantenservice automatisering',
-            'virtuele receptionist',
+            'customer service automation',
+            'virtual receptionist',
             'Voicelabs',
-            'kunstmatige intelligentie',
-            'automatisering',
-            'klantenservice'
+            'artificial intelligence',
+            'automation',
+            'customer service'
           ],
-          inLanguage: 'nl-NL',
+          inLanguage: 'en-US',
           isAccessibleForFree: true,
           copyrightYear: new Date(post.date).getFullYear(),
           copyrightHolder: {
@@ -119,7 +118,7 @@ export default async function BlogPost({ params }: PageProps) {
         className="pt-32 pb-24" 
         itemScope 
         itemType="https://schema.org/Article"
-        lang="nl"
+        lang="en"
       >
         {/* Hero Section */}
         <div className="px-4">
@@ -157,7 +156,7 @@ export default async function BlogPost({ params }: PageProps) {
                   className="inline-flex items-center"
                 >
                   <Link 
-                    href="/nieuws" 
+                    href="/news" 
                     className="text-gray-700 hover:text-blue-600"
                     itemProp="item"
                   >
@@ -205,14 +204,14 @@ export default async function BlogPost({ params }: PageProps) {
 
                 {/* Add reading time estimate */}
                 <p className="text-sm text-gray-500 mt-4">
-                  Leestijd: {readingTime} minuten
+                  Reading time: {readingTime} minutes
                 </p>
               </div>
 
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
                 <Image
-                  src={post.coverImage || "/nieuws/implementatie.jpg"}
-                  alt={`Illustratie bij artikel: ${post.title}`}
+                  src={post.coverImage || "/images/implementation.jpg"}
+                  alt={`Article illustration: ${post.title}`}
                   fill
                   className="object-cover"
                   priority
@@ -229,7 +228,7 @@ export default async function BlogPost({ params }: PageProps) {
             <div 
               className="prose prose-lg prose-blue max-w-none" 
               itemProp="articleBody"
-              lang="nl"
+              lang="en"
             >
               <MDXRemote 
                 source={post.content}

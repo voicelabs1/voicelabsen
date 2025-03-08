@@ -41,14 +41,14 @@ const CookieSettingsModal = ({ isOpen, onClose }: CookieSettingsModalProps) => {
     <div className="fixed inset-0 bg-black/50 flex items-end sm:items-center justify-center z-50 p-4 sm:p-8">
       <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full animate-fade-in">
         <h3 className="text-[1.375rem] leading-[1.75rem] font-medium text-gray-900 mb-4">
-          Cookie Instellingen
+          Cookie Settings
         </h3>
         
         <div className="space-y-6">
           {/* Necessary Cookies */}
           <div className="space-y-2">
             <div className="flex items-center justify-between">
-              <h4 className="text-base font-medium text-gray-900">Noodzakelijke cookies</h4>
+              <h4 className="text-base font-medium text-gray-900">Necessary cookies</h4>
               <input
                 type="checkbox"
                 checked={settings.necessary}
@@ -57,14 +57,14 @@ const CookieSettingsModal = ({ isOpen, onClose }: CookieSettingsModalProps) => {
               />
             </div>
             <p className="text-gray-600 text-sm">
-              Deze cookies zijn nodig om de website te laten werken en kunnen niet worden uitgeschakeld.
+              These cookies are required for the website to function and cannot be disabled.
             </p>
           </div>
 
           {/* Analytics Cookies */}
           <div className="space-y-2">
             <div className="flex items-center justify-between">
-              <h4 className="text-base font-medium text-gray-900">Analytische cookies</h4>
+              <h4 className="text-base font-medium text-gray-900">Analytics cookies</h4>
               <input
                 type="checkbox"
                 checked={settings.analytics}
@@ -73,7 +73,7 @@ const CookieSettingsModal = ({ isOpen, onClose }: CookieSettingsModalProps) => {
               />
             </div>
             <p className="text-gray-600 text-sm">
-              Deze cookies helpen ons te begrijpen hoe bezoekers onze website gebruiken.
+              These cookies help us understand how visitors use our website.
             </p>
           </div>
 
@@ -89,7 +89,7 @@ const CookieSettingsModal = ({ isOpen, onClose }: CookieSettingsModalProps) => {
               />
             </div>
             <p className="text-gray-600 text-sm">
-              Deze cookies worden gebruikt om advertenties relevanter te maken voor u.
+              These cookies are used to make advertisements more relevant to you.
             </p>
           </div>
         </div>
@@ -99,13 +99,13 @@ const CookieSettingsModal = ({ isOpen, onClose }: CookieSettingsModalProps) => {
             onClick={handleSave}
             className="w-full px-6 py-3 rounded-xl bg-[#0063f2] text-white hover:bg-[#004dbd] transition-colors"
           >
-            Instellingen opslaan
+            Save Settings
           </button>
           <button
             onClick={onClose}
             className="w-full px-6 py-3 rounded-xl border-2 border-gray-200 text-gray-900 hover:bg-gray-50 transition-colors"
           >
-            Annuleren
+            Cancel
           </button>
         </div>
       </div>

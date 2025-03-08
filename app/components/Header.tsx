@@ -30,7 +30,7 @@ const Header = () => {
                 <Link href="/">
                   <div className="h-[70px] w-[200px] relative">
                     <Image
-                      src="/plaatjes/logovoicelabs.svg"
+                      src="/images/logovoicelabs.svg"
                       alt="Voicelabs"
                       fill
                       className="object-contain"
@@ -49,16 +49,16 @@ const Header = () => {
                   onClick={() => scrollToSection('solutions')} 
                   className="text-[15px] text-gray-700 hover:text-gray-900"
                 >
-                  Oplossingen
+                  Solutions
                 </button>
                 <button 
                   onClick={() => scrollToSection('pricing')} 
                   className="text-[15px] text-gray-700 hover:text-gray-900"
                 >
-                  Prijzen
+                  Pricing
                 </button>
-                <Link href="/nieuws" className="text-[15px] text-gray-700 hover:text-gray-900">
-                  Nieuws
+                <Link href="/news" className="text-[15px] text-gray-700 hover:text-gray-900">
+                  News
                 </Link>
                 <Link href="/contact" className="text-[15px] text-gray-700 hover:text-gray-900">
                   Contact
@@ -67,7 +67,7 @@ const Header = () => {
                   href="/consult"
                   className="bg-[#0063f2] text-white text-[15px] px-6 py-2.5 rounded-xl hover:bg-blue-600 transition-colors font-medium"
                 >
-                  Aan de slag
+                  Get Started
                 </Link>
               </nav>
 
@@ -77,7 +77,7 @@ const Header = () => {
                   href="/consult"
                   className="bg-[#0063f2] text-white text-[13px] sm:text-[15px] px-4 sm:px-6 py-2 sm:py-2.5 rounded-xl hover:bg-blue-600 transition-colors font-medium whitespace-nowrap"
                 >
-                  Aan de slag
+                  Get Started
                 </Link>
                 {/* Mobile menu button */}
                 <button
@@ -123,20 +123,20 @@ const Header = () => {
                 onClick={() => scrollToSection('solutions')}
                 className="block w-full text-left text-[15px] text-gray-700 hover:text-gray-900 py-2"
               >
-                Oplossingen
+                Solutions
               </button>
               <button 
                 onClick={() => scrollToSection('pricing')}
                 className="block w-full text-left text-[15px] text-gray-700 hover:text-gray-900 py-2"
               >
-                Prijzen
+                Pricing
               </button>
               <Link
-                href="/nieuws"
+                href="/news"
                 className="block text-[15px] text-gray-700 hover:text-gray-900 py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Nieuws
+                News
               </Link>
               <Link
                 href="/contact"
