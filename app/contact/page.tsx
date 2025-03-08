@@ -7,10 +7,10 @@ import Link from 'next/link';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    naam: '',
-    emailadres: '',
-    telefoonnummer: '',
-    vraag: ''
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
@@ -33,7 +33,7 @@ export default function ContactPage() {
       if (!response.ok) throw new Error('Submission failed');
       
       setSubmitStatus('success');
-      setFormData({ naam: '', emailadres: '', telefoonnummer: '', vraag: '' });
+      setFormData({ name: '', email: '', phone: '', message: '' });
     } catch (error) {
       console.error('Form submission error:', error);
       setSubmitStatus('error');
@@ -76,18 +76,18 @@ export default function ContactPage() {
           {/* Left Column - Hero Text */}
           <div className="reveal [transform:translateY(20px)] [transition:all_0.8s_ease-out] [opacity:0] [.active&]:translate-y-0 [.active&]:opacity-100">
             <div className="text-sm font-medium text-gray-500 tracking-wide mb-6 animate-[fadeIn_0.8s_ease-out]">
-              Contactformulier
+              Contact Form
             </div>
             <h1 className="text-[56px] leading-[1.1] font-normal mb-6 animate-[fadeSlideIn_1s_ease-out]">
-              Gemakkelijk contact opnemen
+              Get in touch easily
             </h1>
             <p className="paragraph text-gray-600 mb-12 animate-[fadeSlideIn_1.2s_ease-out]">
-              Of je nu nieuwsgierig bent naar onze AI-receptionisten, hulp nodig hebt, of gewoon gedag wilt zeggen, we zijn er voor je. Stuur ons een bericht via het formulier of neem direct contact met ons op via onderstaande opties.
+              Whether you're curious about our AI receptionists, need help, or just want to say hello, we're here for you. Send us a message using the form or contact us directly through the options below.
             </p>
 
             <div className="grid grid-cols-1 gap-8 mb-16 animate-[fadeSlideIn_1.4s_ease-out]">
               <div>
-                <h3 className="text-lg font-medium mb-2">E-mail</h3>
+                <h3 className="text-lg font-medium mb-2">Email</h3>
                 <a href="mailto:contact@voicelabs.agency" className="text-[#0063f2] hover:opacity-80">
                   contact@voicelabs.agency
                 </a>
@@ -99,59 +99,59 @@ export default function ContactPage() {
           <div className="bg-white rounded-2xl p-8 shadow-[0_8px_32px_rgba(0,0,0,0.12)] border border-gray-100 lg:sticky lg:top-32 reveal [transform:translateY(20px)] [transition:all_1s_ease-out] [opacity:0] [.active&]:translate-y-0 [.active&]:opacity-100">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="animate-[fadeSlideIn_1.2s_ease-out]">
-                <label htmlFor="naam" className="block text-sm font-medium text-gray-700 mb-2">
-                  Naam
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                  Name
                 </label>
                 <input
                   type="text"
-                  id="naam"
+                  id="name"
                   required
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#0063f2] focus:border-transparent transition-colors"
-                  value={formData.naam}
-                  onChange={(e) => setFormData({ ...formData, naam: e.target.value })}
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 />
               </div>
               
               <div className="animate-[fadeSlideIn_1.4s_ease-out]">
-                <label htmlFor="emailadres" className="block text-sm font-medium text-gray-700 mb-2">
-                  E-mailadres
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  Email address
                 </label>
                 <input
                   type="email"
-                  id="Email"
+                  id="email"
                   required
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#0063f2] focus:border-transparent transition-colors"
-                  value={formData.emailadres}
-                  onChange={(e) => setFormData({ ...formData, emailadres: e.target.value })}
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 />
               </div>
 
               <div className="animate-[fadeSlideIn_1.6s_ease-out]">
-                <label htmlFor="telefoonnummer" className="block text-sm font-medium text-gray-700 mb-2">
-                  Telefoonnummer
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                  Phone number
                 </label>
                 <input
                   type="tel"
-                  id="telefoonnummer"
+                  id="phone"
                   required
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#0063f2] focus:border-transparent transition-colors"
-                  value={formData.telefoonnummer}
-                  onChange={(e) => setFormData({ ...formData, telefoonnummer: e.target.value })}
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   placeholder="+31612345678"
                 />
               </div>
 
               <div className="animate-[fadeSlideIn_1.8s_ease-out]">
-                <label htmlFor="vraag" className="block text-sm font-medium text-gray-700 mb-2">
-                  Bericht
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  Message
                 </label>
                 <textarea
-                  id="vraag"
+                  id="message"
                   required
                   rows={4}
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#0063f2] focus:border-transparent transition-colors"
-                  value={formData.vraag}
-                  onChange={(e) => setFormData({ ...formData, vraag: e.target.value })}
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 />
               </div>
 
@@ -160,17 +160,17 @@ export default function ContactPage() {
                 disabled={isSubmitting}
                 className="w-full bg-[#0063f2] text-white px-8 py-4 rounded-xl hover:bg-[#004dbd] transition-all duration-300 text-[17px] font-medium hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
-                {isSubmitting ? 'Verzenden...' : 'Verstuur bericht'}
+                {isSubmitting ? 'Sending...' : 'Send message'}
               </button>
 
               {submitStatus === 'success' && (
                 <div className="bg-emerald-50 text-emerald-600 p-4 rounded-xl text-sm">
-                  Je bericht is succesvol verzonden. We nemen zo snel mogelijk contact met je op.
+                  Your message has been sent successfully. We'll get back to you as soon as possible.
                 </div>
               )}
               {submitStatus === 'error' && (
                 <div className="bg-red-50 text-red-600 p-4 rounded-xl text-sm">
-                  Er is iets misgegaan. Probeer het later opnieuw.
+                  Something went wrong. Please try again later.
                 </div>
               )}
             </form>
@@ -179,11 +179,11 @@ export default function ContactPage() {
 
         {/* FAQ Section - Full Width */}
         <div className="max-w-3xl mx-auto mt-32 reveal [transform:translateY(20px)] [transition:all_0.8s_ease-out] [opacity:0] [.active&]:translate-y-0 [.active&]:opacity-100">
-          <h2 className="text-center text-4xl mb-4 animate-[fadeSlideIn_0.8s_ease-out]">Veelgestelde vragen</h2>
+          <h2 className="text-center text-4xl mb-4 animate-[fadeSlideIn_0.8s_ease-out]">Frequently Asked Questions</h2>
           <p className="paragraph text-gray-600 text-center mb-12 animate-[fadeSlideIn_1s_ease-out]">
-            Dit zijn de meest gestelde vragen over onze AI-telefonisten.
+            These are the most common questions about our AI receptionists.
             <br />
-            Andere vragen? <button onClick={() => window.scrollTo(0, 0)} className="text-[#0063f2] hover:opacity-80">Neem contact op met ons team!</button>
+            Other questions? <button onClick={() => window.scrollTo(0, 0)} className="text-[#0063f2] hover:opacity-80">Contact our team!</button>
           </p>
 
           <div className="space-y-4">
@@ -198,13 +198,13 @@ export default function ContactPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                     </svg>
                   </span>
-                  <span className="h3-small text-gray-900">Wat is AI-telefonie?</span>
+                  <span className="h3-small text-gray-900">What is AI telephony?</span>
                 </div>
               </button>
               <div className={`transition-all duration-200 ease-in-out ${openFaq === 0 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
                 <div className="px-6 pb-6 pt-2">
                   <p className="paragraph text-gray-600 ml-10">
-                    AI-telefonie gebruikt kunstmatige intelligentie om telefoongesprekken te beheren. Het zorgt ervoor dat je bedrijf 24/7 bereikbaar is, gesprekken professioneel worden afgehandeld en je klantenservice wordt geautomatiseerd. De AI begrijpt natuurlijke taal, kan normale gesprekken voeren en regelt praktische zaken zoals afspraken inplannen of informatie geven.
+                    AI telephony uses artificial intelligence to manage phone calls. It ensures your business is available 24/7, handles calls professionally, and automates your customer service. The AI understands natural language, can conduct normal conversations, and handles practical matters such as scheduling appointments or providing information.
                   </p>
                 </div>
               </div>
@@ -221,13 +221,13 @@ export default function ContactPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                     </svg>
                   </span>
-                  <span className="h3-small text-gray-900">Wat is een AI-receptionist?</span>
+                  <span className="h3-small text-gray-900">What is an AI receptionist?</span>
                 </div>
               </button>
               <div className={`transition-all duration-200 ease-in-out ${openFaq === 1 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
                 <div className="px-6 pb-6 pt-2">
                   <p className="paragraph text-gray-600 ml-10">
-                    AI receptionisten zijn slimme digitale assistenten die net als mensen praten en begrijpen wat klanten willen. Ze nemen routinetaken over zoals afspraken maken en bestellingen opnemen. Zo bespaar je tijd en geld, en heb je minder stress over gemiste telefoontjes.
+                    AI receptionists are smart digital assistants that talk and understand what customers want, just like humans. They take over routine tasks like scheduling appointments and taking orders. This saves you time and money, and reduces stress about missed calls.
                   </p>
                 </div>
               </div>
@@ -244,7 +244,7 @@ export default function ContactPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                     </svg>
                   </span>
-                  <span className="h3-small text-gray-900">Wat is Conversational AI?</span>
+                  <span className="h3-small text-gray-900">What is Conversational AI?</span>
                 </div>
               </button>
               <div className={`transition-all duration-200 ease-in-out ${openFaq === 2 ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>

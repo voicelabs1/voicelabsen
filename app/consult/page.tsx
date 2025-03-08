@@ -115,11 +115,11 @@ export default function ConsultPage() {
         <div className="relative max-w-7xl mx-auto px-4">
           <div className="max-w-3xl">
             <h1 className="text-white mb-6 animate-fadeSlideIn [animation-duration:1.2s]">
-              Boek een<br />
-              <span className="text-[#0063f2]">vrijblijvend</span> consult
+              Book a<br />
+              <span className="text-[#0063f2]">free</span> consultation
             </h1>
             <p className="paragraph text-white/80 mb-8 reveal">
-              Benieuwd hoe onze AI-receptionisen uw bedrijf kunnen ondersteunen? Boek gemakkelijk een vrijblijvend consult met een van onze specialisten.
+              Curious how our AI receptionists can support your business? Easily book a free consultation with one of our specialists.
             </p>
           </div>
         </div>
@@ -135,8 +135,8 @@ export default function ConsultPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3>Persoonlijk advies</h3>
-              <p className="text-gray-600">Krijg direct inzicht in hoe AI-telefonie jouw specifieke situatie kan verbeteren.</p>
+              <h3>Personal advice</h3>
+              <p className="text-gray-600">Get immediate insight into how AI telephony can improve your specific situation.</p>
             </div>
             <div className="space-y-4 reveal">
               <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center">
@@ -144,8 +144,8 @@ export default function ConsultPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                 </svg>
               </div>
-              <h3>Concreet voorstel</h3>
-              <p className="text-gray-600">Ontdek praktische toepassingen en krijg een duidelijk implementatieplan.</p>
+              <h3>Concrete proposal</h3>
+              <p className="text-gray-600">Discover practical applications and get a clear implementation plan.</p>
             </div>
             <div className="space-y-4 reveal">
               <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center">
@@ -153,8 +153,8 @@ export default function ConsultPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h3>Direct aan de slag</h3>
-              <p className="text-gray-600">Akkoord? Na het gesprek gaan we meteen aan de slag voor je persoonlijke assistent en de nodige integraties.</p>
+              <h3>Get started immediately</h3>
+              <p className="text-gray-600">Agreed? After the conversation, we'll immediately start working on your personal assistant and the necessary integrations.</p>
             </div>
           </div>
         </div>

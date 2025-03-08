@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-async function addToAirtable(naam: string, emailadres: string, telefoonnummer: string, vraag: string) {
+async function addToAirtable(name: string, email: string, phone: string, message: string) {
   try {
     const response = await fetch(
       'https://api.airtable.com/v0/appSItr9MR2Jyktds/Contactformulier',
@@ -12,10 +12,10 @@ async function addToAirtable(naam: string, emailadres: string, telefoonnummer: s
         },
         body: JSON.stringify({
           fields: {
-            "Naam": naam,
-            "Emailadres": emailadres,
-            "Telefoonnummer": telefoonnummer,
-            "Vraag": vraag
+            "Name": name,
+            "Email": email,
+            "Phone": phone,
+            "Message": message
           },
           typecast: true
         }),
@@ -38,10 +38,10 @@ async function addToAirtable(naam: string, emailadres: string, telefoonnummer: s
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { naam, emailadres, telefoonnummer, vraag } = body;
+    const { name, email, phone, message } = body;
 
     // Save to Airtable
-    await addToAirtable(naam, emailadres, telefoonnummer, vraag);
+    await addToAirtable(name, email, phone, message);
 
     return NextResponse.json({ success: true });
   } catch (error) {
