@@ -12,9 +12,9 @@ async function addToAirtable(name: string, email: string, phone: string) {
         },
         body: JSON.stringify({
           fields: {
-            Name: name,
+            Naam: name,
             Email: email,
-            Phone: phone
+            Telefoonnummer: phone
           },
           typecast: true
         }),
